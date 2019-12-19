@@ -13,10 +13,44 @@ html
 			*,
 			*::after,
 			*::before {
-				outline: 1px solid rgba(255,0,0,.5) !important
+				//- outline: 1px solid rgba(255,0,0,.5) !important
 			}
 		script(src="https://ctr-localhost.ru/vlad/jq.js")
 
 	body
 		.w-page
+			section.layout
+				.layout__header
+					header.header fbzfd
+				.layout__swips
+					section.stack
+						aside.stack__timer.timer
+							.timer__time.js-timer
+							.timer__left
+								strong.js-attempts
+						.stack__pics
+							.stack__pic.eraser.eraser--phone
+								.eraser__pic
+								img.eraser__layer(src="img/fake-img.png", alt="")
+							.stack__pic.eraser
+								.eraser__pic
+								img.eraser__layer(src="img/fake-img.png", alt="")
+							.stack__pic.eraser
+								.eraser__pic
+								img.eraser__layer(src="img/fake-img.png", alt="")
+							.stack__pic.eraser
+								.eraser__pic
+								img.eraser__layer(src="img/fake-img.png", alt="")
+						.stack__cards
+							.stack__card
+								.card.card--color-2-1
+							.stack__card
+								.card.card--color-2-2
+							.stack__card
+								.card.card--color-2-3
+							.stack__card
+								.card.card--color-2-4
+				.layout__comments
+					section.comments
+		script(src="js/jquery.eraser.CUSTOMIZED.js")
 		script(src="js/common.js")

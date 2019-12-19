@@ -69,5 +69,150 @@ select
 .container
 	@extend %container
 
+.layout
+	max-width: 530px	
+	padding: 0 15px
+	margin: 0 auto	
+
+
+
+.stack
+	position: relative
+	&__cards,
+	&__pics
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+	&__pics
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	&__card,
+	&__pic
+		width: calc(50% - 15px)
+		margin-bottom: 30px
+		&:nth-child(odd)
+			margin-right: 30px
+	&.e-start
+		.eraser
+			transform: translate(0px,0px)
+			top: auto
+			right: auto
+			left: auto
+			opacity: 0
+
+
+.card
+	padding-top: 120%
+	position: relative
+	border-radius: 3px
+	color: #fff
+	&::after,
+	&::before
+		content: ''
+		position: absolute
+		background-color: currentColor
+		border-radius: 0 0 3px 3px
+	&::after
+		height: 5px
+		right: 5px
+		left: 5px
+		opacity: .6
+	&::before
+		height: 10px
+		left: 10px
+		right: 10px
+		opacity: .3
+	&--color-1-1
+		color: #ff8359
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #ff8359, #ffdf40)
+		box-shadow: 0 15px 45px rgba(#ff8359,.25)
+	&--color-1-2
+		color: #5ac8fa
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #5ac8fa, #50fbdc)
+		box-shadow: 0 15px 45px rgba(#5ac8fa,.25)
+	&--color-1-3
+		color: #ff5178
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #ff5178, #ff85ad)
+		box-shadow: 0 15px 45px rgba(#f5317f,.25)
+	&--color-1-4
+		color: #54d169
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #54d169, #aff57a)
+		box-shadow: 0 15px 45px rgba(#54d169,.25)
+	&--color-2-1
+		color: #ea5455
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #ea5455, #feb692)
+		box-shadow: 0 15px 45px rgba(#ea5455,.25)
+	&--color-2-2
+		color: #7367f0
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #7367f0, #ce9ffc)
+		box-shadow: 0 15px 45px rgba(#7367f0,.25)
+	&--color-2-3
+		color: #369a3a
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #369a3a, #6ad56a)
+		box-shadow: 0 15px 45px rgba(#54d169,.25)
+	&--color-2-4
+		color: #ffc107
+		background-color: currentColor
+		background-image: linear-gradient(-45deg, #ffc107, #fff178)
+		box-shadow: 0 15px 45px rgba(#ffc107,.25)
+
+
+
+.eraser
+	position: relative
+	z-index: 1
+	transition: transform .5s linear, opacity .2s .4s ease-in-out
+	&__layer
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 2
+		border-radius: 3px
+		display: none
+	&__pic
+		position: absolute
+		background-image: url(../img/card-loose.png)
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	&--phone
+		z-index: 4
+		.eraser__pic
+			background-image: url(../img/card-prize.png)
+	&:nth-child(1)
+		transform: translate(50%, 50%)
+		top: 15px
+		left: 15px
+	&:nth-child(2)
+		transform: translate(-50%, 50%)
+		top: 30px
+		right: 15px
+	&:nth-child(3)
+		transform: translate(50%, -50%)
+		left: 15px
+	&:nth-child(4)
+		transform: translate(-50%, -50%)
+		right: 15px
+
+
 //ALWAYS END
 @import "media"

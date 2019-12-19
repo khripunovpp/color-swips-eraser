@@ -12,6 +12,48 @@ var Util = {
     }
 }
 
-$(function() {
+var colorPalette = [
+    [
+        ['#ff8359', '#ffdf40'],
+        ['#5ac8fa', '#50fbdc'],
+        ['#ff5178', '#ff85ad'],
+        ['#54d169', '#aff57a']
+    ],
+    [
+        ['#ea5455', '#feb692'],
+        ['#7367f0', '#ce9ffc'],
+        ['#369a3a', '#6ad56a'],
+        ['#ffc107', '#fff178']
+    ]
+];
 
+var swip = {
+    config: {
+        colorPalette: [
+            [
+                ['#ff8359', '#ffdf40'],
+                ['#5ac8fa', '#50fbdc'],
+                ['#ff5178', '#ff85ad'],
+                ['#54d169', '#aff57a']
+            ],
+            [
+                ['#ea5455', '#feb692'],
+                ['#7367f0', '#ce9ffc'],
+                ['#369a3a', '#6ad56a'],
+                ['#ffc107', '#fff178']
+            ]
+        ],
+        attempts: 3,
+        currentAttempt: 0
+    },
+    init: function(options) {
+
+    }
+}
+
+$(function() {
+    swip.init();
+    $('.eraser__layer').eraser({
+        gradient: ['#369a3a', '#6ad56a']
+    });
 });

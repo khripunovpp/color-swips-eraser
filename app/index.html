@@ -12,13 +12,59 @@
       *,
       *::after,
       *::before {
-      	outline: 1px solid rgba(255,0,0,.5) !important
+      	//- outline: 1px solid rgba(255,0,0,.5) !important
       }
     </style>
     <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
   </head>
   <body>
-    <div class="w-page"></div>
+    <div class="w-page">
+      <section class="layout">
+        <div class="layout__header">
+          <header class="header">fbzfd</header>
+        </div>
+        <div class="layout__swips">
+          <section class="stack">
+            <aside class="stack__timer timer">
+              <div class="timer__time js-timer"></div>
+              <div class="timer__left"><strong class="js-attempts"></strong></div>
+            </aside>
+            <div class="stack__pics">
+              <div class="stack__pic eraser eraser--phone">
+                <div class="eraser__pic"></div><img class="eraser__layer" src="img/fake-img.png" alt="">
+              </div>
+              <div class="stack__pic eraser">
+                <div class="eraser__pic"></div><img class="eraser__layer" src="img/fake-img.png" alt="">
+              </div>
+              <div class="stack__pic eraser">
+                <div class="eraser__pic"></div><img class="eraser__layer" src="img/fake-img.png" alt="">
+              </div>
+              <div class="stack__pic eraser">
+                <div class="eraser__pic"></div><img class="eraser__layer" src="img/fake-img.png" alt="">
+              </div>
+            </div>
+            <div class="stack__cards">
+              <div class="stack__card">
+                <div class="card card--color-2-1"></div>
+              </div>
+              <div class="stack__card">
+                <div class="card card--color-2-2"></div>
+              </div>
+              <div class="stack__card">
+                <div class="card card--color-2-3"></div>
+              </div>
+              <div class="stack__card">
+                <div class="card card--color-2-4"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="layout__comments">
+          <section class="comments"></section>
+        </div>
+      </section>
+    </div>
+    <script src="js/jquery.eraser.CUSTOMIZED.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
