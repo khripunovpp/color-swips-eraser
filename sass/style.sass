@@ -1,0 +1,73 @@
+@import "bourbon"
+@import "icon.sass"
+@import "mixins"
+
+$font: 'Roboto', sans-serif
+
+html
+	box-sizing: border-box
+
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	outline: none
+
+@include placeholder()
+  color: #eee
+
+body
+	margin: 0	
+	overflow-x: hidden
+	font-family: $font
+	line-height: 1.4
+	font-size: 14px
+	text-size-adjust: 100%
+	-webkit-tap-highlight-color: transparent
+
+img
+	max-width: 100%	
+	border: none	
+	outline: none	
+
+a
+	border: none	
+	outline: none	
+
+ul
+	list-style-type: none	
+	margin: 0	
+	padding: 0
+
+select::-ms-expand
+	display: none
+
+select
+	appearance: none
+
+button,
+input,
+textarea,
+select
+	font-family: $font
+
+%container
+	width: 100%
+	max-width: 970px	
+	padding: 0 15px
+	margin: 0 auto
+
+%grid
+	display: table
+	width: 100%
+	table-layout: fixed
+
+%part
+	display: table-cell
+	vertical-align: top
+
+.container
+	@extend %container
+
+//ALWAYS END
+@import "media"
