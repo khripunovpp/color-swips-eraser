@@ -277,11 +277,11 @@ select {
 .eraser {
   position: relative;
   z-index: 1;
-  -webkit-transition: opacity .2s .4s ease-in-out, -webkit-transform .5s linear;
-  transition: opacity .2s .4s ease-in-out, -webkit-transform .5s linear;
-  -o-transition: transform .5s linear, opacity .2s .4s ease-in-out;
-  transition: transform .5s linear, opacity .2s .4s ease-in-out;
-  transition: transform .5s linear, opacity .2s .4s ease-in-out, -webkit-transform .5s linear;
+  -webkit-transition: opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
+  transition: opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
+  -o-transition: transform 1s linear, opacity .5s .8s ease-in-out;
+  transition: transform 1s linear, opacity .5s .8s ease-in-out;
+  transition: transform 1s linear, opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
 }
 
 .eraser.active {
@@ -497,6 +497,7 @@ select {
 .popup__pic {
   margin: 0 auto 20px;
   display: block;
+  max-width: 75%;
 }
 
 .popup__title {
@@ -608,6 +609,9 @@ select {
   }
   .popup__wrapper {
     padding: 90px 15px;
+  }
+  .popup__pic {
+    max-width: none;
   }
   .stack {
     cursor: default;

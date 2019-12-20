@@ -148,7 +148,7 @@ var swip = {
 
         setTimeout(function() {
             _t.stopShuffle();
-        }, 1500)
+        }, 3000)
     },
 
     coloringCards: function(palette) {
@@ -202,23 +202,20 @@ var swip = {
                 currentEraser.addClass('active');
             index === _t.currentCardIndex && configs.currentAttempt >= configs.winnerAttempt ?
                 currentEraser.addClass('eraser--phone') :
-                currentEraser.removeClass('eraser--phone')
+                currentEraser.removeClass('eraser--phone');
         });
     },
     results: function() {
         var _t = this,
             configs = _t.config;
 
-        _t.clear();
-
         configs.currentAttempt >= configs.winnerAttempt ? _t.won() : _t.loose();
 
         configs.currentAttempt++;
     },
-    clear: function() {
+    reBuild: function() {
         var _t = this;
 
-        $('.eraser__layer').remove();
         _t.erasers.each(function(index, el) {
             var el = $(el);
             el.removeClass('active').append('<img src="img/fake-img.png" class="eraser__layer" />');
@@ -232,7 +229,22 @@ var swip = {
     loose: function() {
         var _t = this;
 
-        _t.openPopup('#popupLoose');
+        _t.showRealPlace()
+    },
+    showRealPlace: function() {
+        var _t = this;
+        var randIndex = 0;
+        do {
+            randIndex = Util.randomInteger(0, _t.erasers.length - 1);
+        } while (randIndex === _t.currentCardIndex)
+
+        _t.erasers.eq(randIndex).addClass('eraser--phone');
+        _t.erasers.addClass('active');
+        $('.eraser__layer').remove();
+         setTimeout(function() {
+            _t.reBuild();
+            _t.openPopup('#popupLoose');
+        }, 1700)
     },
     openPopup: function(query) {
         var _t = this;
