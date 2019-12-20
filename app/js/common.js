@@ -124,6 +124,16 @@ var swip = {
                 _t.start();
             })
         });
+
+        var cursor = $("#cursor");
+        _t.stack.mousemove(function(e) {
+            cursor.show().css({
+                "left": e.clientX - 30,
+                "top": e.clientY - 20
+            });
+        }).mouseout(function() {
+            cursor.hide();
+        });
     },
 
     start: function() {
@@ -254,7 +264,7 @@ var swip = {
 
         var timerId = setInterval(function() {
             count--;
-            if(count === 1) clearInterval(timerId);
+            if (count === 1) clearInterval(timerId);
             el.text(count);
         }, 6000)
     }

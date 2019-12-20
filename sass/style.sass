@@ -111,6 +111,7 @@ select
 
 .stack
 	position: relative
+	cursor: none !important
 	&__cards,
 	&__pics
 		display: -webkit-flex
@@ -133,15 +134,15 @@ select
 			margin-right: 30px
 	&__info
 		position: absolute
-		top: 39%
+		top: 37%
 		left: 50%
 		z-index: 5
 		background-color: #fff
 		text-align: center
-		padding: 10px 15px
+		padding: 10px
 		border-radius: 3px
 		box-shadow: 0 15px 45px rgba(#000,.06)
-		min-width: 180px
+		min-width: 150px
 		width: 30%
 		transition: all .2s .2s ease-in-out
 		transform: translate3d(-50%,0,0) scale(0)
@@ -174,9 +175,9 @@ select
 .attempts
 	margin: 0
 	color: #ff0054
-	font-size: 18px
+	font-size: 15px
 	strong
-		font-size: 24px
+		font-size: 18px
 		display: block
 		line-height: 1
 
@@ -284,7 +285,7 @@ select
 
 .popup
 	position: fixed
-	z-index: 5
+	z-index: 7
 	top: 0
 	left: 0
 	width: 100%
@@ -358,7 +359,7 @@ select
 
 
 .timer
-	font-size: 50px
+	font-size: 30px
 	font-weight: 700
 	color: #ff0054
 	line-height: 1
@@ -400,6 +401,14 @@ select
 			&__icon
 				background-position: 60% 50%
 
+
+#cursor
+	position: absolute
+	z-index: 6
+	left: -100px
+	cursor: none !important
+	pointer-events: none
+	display: none
 
 //ALWAYS END
 @import "media"

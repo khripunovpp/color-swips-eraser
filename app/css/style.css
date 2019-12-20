@@ -142,6 +142,7 @@ select {
 
 .stack {
   position: relative;
+  cursor: none !important;
 }
 
 .stack__cards, .stack__pics {
@@ -177,16 +178,16 @@ select {
 
 .stack__info {
   position: absolute;
-  top: 39%;
+  top: 37%;
   left: 50%;
   z-index: 5;
   background-color: #fff;
   text-align: center;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 3px;
   -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  min-width: 180px;
+  min-width: 150px;
   width: 30%;
   -webkit-transition: all .2s .2s ease-in-out;
   -o-transition: all .2s .2s ease-in-out;
@@ -235,11 +236,11 @@ select {
 .attempts {
   margin: 0;
   color: #ff0054;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .attempts strong {
-  font-size: 24px;
+  font-size: 18px;
   display: block;
   line-height: 1;
 }
@@ -400,7 +401,7 @@ select {
 
 .popup {
   position: fixed;
-  z-index: 5;
+  z-index: 7;
   top: 0;
   left: 0;
   width: 100%;
@@ -501,7 +502,7 @@ select {
 }
 
 .timer {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 700;
   color: #ff0054;
   line-height: 1;
@@ -556,6 +557,15 @@ select {
   background-position: 60% 50%;
 }
 
+#cursor {
+  position: absolute;
+  z-index: 6;
+  left: -100px;
+  cursor: none !important;
+  pointer-events: none;
+  display: none;
+}
+
 @media only screen and (min-width: 590px) {
   .header {
     padding: 20px;
@@ -584,5 +594,22 @@ select {
   }
   .popup__close {
     right: -35px;
+  }
+  .stack {
+    cursor: default;
+  }
+  .stack__info {
+    top: 39%;
+    min-width: 180px;
+    padding: 10px 15px;
+  }
+  .timer {
+    font-size: 50px;
+  }
+  .attempts {
+    font-size: 18px;
+  }
+  .attempts strong {
+    font-size: 24px;
   }
 }
