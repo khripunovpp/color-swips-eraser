@@ -131,6 +131,36 @@ select
 		margin-bottom: 30px
 		&:nth-child(odd)
 			margin-right: 30px
+	&__info
+		position: absolute
+		top: 39%
+		left: 50%
+		z-index: 5
+		background-color: #fff
+		text-align: center
+		padding: 10px 15px
+		border-radius: 3px
+		box-shadow: 0 15px 45px rgba(#000,.06)
+		min-width: 180px
+		width: 30%
+		transition: all .2s .2s ease-in-out
+		transform: translate3d(-50%,0,0) scale(0)
+		&::after,
+		&::before
+			content: ''
+			position: absolute
+			background-color: #fff
+			border-radius: 0 0 3px 3px
+			box-shadow: 0 15px 45px rgba(#000,.06)
+			top: 100%
+		&::after
+			height: 5px
+			right: 5px
+			left: 5px
+		&::before
+			height: 10px
+			left: 10px
+			right: 10px
 	&.e-start
 		.eraser
 			transform: translate(0px,0px)
@@ -138,7 +168,17 @@ select
 			right: auto
 			left: auto
 			opacity: 0
+		.stack__info
+			transform: translate3d(-50%,0,0) scale(1)
 
+.attempts
+	margin: 0
+	color: #ff0054
+	font-size: 18px
+	strong
+		font-size: 24px
+		display: block
+		line-height: 1
 
 .card
 	padding-top: 120%

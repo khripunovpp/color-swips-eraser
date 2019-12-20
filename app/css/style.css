@@ -175,6 +175,48 @@ select {
   margin-right: 30px;
 }
 
+.stack__info {
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  z-index: 5;
+  background-color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  min-width: 180px;
+  width: 30%;
+  -webkit-transition: all .2s .2s ease-in-out;
+  -o-transition: all .2s .2s ease-in-out;
+  transition: all .2s .2s ease-in-out;
+  -webkit-transform: translate3d(-50%, 0, 0) scale(0);
+  transform: translate3d(-50%, 0, 0) scale(0);
+}
+
+.stack__info::after, .stack__info::before {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  top: 100%;
+}
+
+.stack__info::after {
+  height: 5px;
+  right: 5px;
+  left: 5px;
+}
+
+.stack__info::before {
+  height: 10px;
+  left: 10px;
+  right: 10px;
+}
+
 .stack.e-start .eraser {
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
@@ -183,6 +225,23 @@ select {
   right: auto;
   left: auto;
   opacity: 0;
+}
+
+.stack.e-start .stack__info {
+  -webkit-transform: translate3d(-50%, 0, 0) scale(1);
+  transform: translate3d(-50%, 0, 0) scale(1);
+}
+
+.attempts {
+  margin: 0;
+  color: #ff0054;
+  font-size: 18px;
+}
+
+.attempts strong {
+  font-size: 24px;
+  display: block;
+  line-height: 1;
 }
 
 .card {

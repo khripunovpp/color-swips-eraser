@@ -25,6 +25,47 @@ var Util = {
     }
 }
 
+var timer = function(el, minutes) {
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        return {
+            'total': t,
+            'minutes': minutes < 10 ? '0' + minutes : minutes,
+            'seconds': seconds < 10 ? '0' + seconds : seconds
+        };
+    }
+
+    function initializeClock(el, endtime) {
+        var clock = document.querySelectorAll(el);
+
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            $(clock).html(t.minutes + ':' + t.seconds)
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    var _currentDate = new Date();
+    var count = minutes || 15;
+    var _toDate = new Date(_currentDate.getFullYear(),
+        _currentDate.getMonth(),
+        _currentDate.getDate(),
+        _currentDate.getHours(),
+        _currentDate.getMinutes() + count,
+        1);
+    initializeClock(el, _toDate);
+}
+
+
 var swip = {
     config: {
         colorPalette: [
@@ -42,8 +83,10 @@ var swip = {
             ]
         ],
         winnerAttempt: 1,
+        prizesCount: 3,
         currentAttempt: 0,
-        currentCardIndex: 0
+        currentCardIndex: 0,
+        timer: 5
     },
     init: function(options) {
         var _t = this,
@@ -70,6 +113,8 @@ var swip = {
             event.preventDefault();
             _t.closePopup('#popupStart', function() {
                 _t.start();
+                _t.timerInit();
+                _t.counter();
             })
         });
 
@@ -161,8 +206,7 @@ var swip = {
         configs.currentAttempt++;
     },
     clear: function() {
-        var _t = this,
-            configs = _t.config;
+        var _t = this;
 
         $('.eraser__layer').remove();
         _t.erasers.each(function(index, el) {
@@ -171,14 +215,12 @@ var swip = {
         });
     },
     won: function() {
-        var _t = this,
-            configs = _t.config;
+        var _t = this;
 
         _t.openPopup('#popupWin');
     },
     loose: function() {
-        var _t = this,
-            configs = _t.config;
+        var _t = this;
 
         _t.openPopup('#popupLoose');
     },
@@ -197,6 +239,24 @@ var swip = {
         $('body').css('overflow', 'initial');
         $(query).removeClass('showed')
         $(query).fadeOut(200, cb);
+    },
+    timerInit: function() {
+        var _t = this,
+            configs = _t.config;
+        timer('.js-timer', configs.timer)
+    },
+    counter: function() {
+        var _t = this,
+            configs = _t.config;
+
+        var el = $('.js-prizes'),
+            count = configs.prizesCount;
+
+        var timerId = setInterval(function() {
+            count--;
+            if(count === 1) clearInterval(timerId);
+            el.text(count);
+        }, 6000)
     }
 }
 
