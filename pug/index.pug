@@ -21,7 +21,9 @@ html
 		.w-page
 			section.layout
 				.layout__header
-					header.header fbzfd
+					header.header
+						p.header__logo BRANDNAME
+						h1.header__sign Выбери коробку и выиграй телефон!
 				.layout__swips
 					section.stack
 						aside.stack__timer.timer
@@ -52,5 +54,21 @@ html
 								.card
 				.layout__comments
 					section.comments
+						h2.comments__title Комментарии
+						ul.comments__list
+							li.comments__item.review
+								img.review__ava(src="img/ava-1.jpg", alt="")
+								.review__tail
+									p.review__comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									p.review__name — Lorem ipsum dolor sit
+									p.review__date 5 минут назад
+							li.comments__item.review
+								img.review__ava(src="img/ava-2.jpg", alt="")
+								.review__tail
+									p.review__comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									p.review__name — Lorem ipsum dolor sit
+									p.review__date 27 минут назад
+
+		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН-->
 		script(src="js/jquery.eraser.CUSTOMIZED.js")
 		script(src="js/common.js")

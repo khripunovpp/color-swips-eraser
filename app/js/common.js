@@ -41,10 +41,9 @@ var swip = {
                 ['#ffc107', '#fff178']
             ]
         ],
-        attempts: 3,
+        winnerAttempt: 1,
         currentAttempt: 0,
-        currentCardIndex: 0,
-        placeholderTpl: ''
+        currentCardIndex: 0
     },
     init: function(options) {
         var _t = this,
@@ -56,12 +55,12 @@ var swip = {
 
         _t.timerStep = 0;
 
-        _t.placeholderTpl = _t.erasers.eq(0).find('.eraser__layer').clone();
-
         _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
-        _t.start();
-
+        // setTimeout(function() {
+        //     var ok = confirm("Начать");
+        //     ok && _t.start();
+        // }, 150)
     },
 
     start: function() {
@@ -99,7 +98,6 @@ var swip = {
             configs = _t.config;
         clearInterval(_t.colorTimer);
         _t.makeErasers();
-
     },
     makeErasers: function() {
         var _t = this,
@@ -114,7 +112,7 @@ var swip = {
                     _t.currentCardIndex = $(current).closest('.eraser').index();
                     _t.disableErasers.call(_t);
                 },
-                completeRatio: configs.currentAttempt >= 1 ? .5 : .25,
+                completeRatio: configs.currentAttempt >= configs.winnerAttempt ? .5 : .25,
                 completeFunction: _t.results.bind(_t)
             });
         });
@@ -126,11 +124,10 @@ var swip = {
 
         _t.erasers.each(function(index, el) {
             var currentEraser = $(el);
-            console.log(configs.currentAttempt)
             index !== _t.currentCardIndex ?
                 currentEraser.find('.eraser__layer').eraser('disable') :
                 currentEraser.addClass('active');
-            index === _t.currentCardIndex && configs.currentAttempt >= 1 ?
+            index === _t.currentCardIndex && configs.currentAttempt >= configs.winnerAttempt ?
                 currentEraser.addClass('eraser--phone') :
                 currentEraser.removeClass('eraser--phone')
         });
@@ -141,7 +138,7 @@ var swip = {
 
         _t.clear();
 
-        configs.currentAttempt >= 1 ? _t.won() : _t.loose();
+        configs.currentAttempt >= configs.winnerAttempt ? _t.won() : _t.loose();
 
         configs.currentAttempt++;
     },
@@ -149,7 +146,7 @@ var swip = {
         var _t = this,
             configs = _t.config;
 
-        _t.erasers.find('.eraser__layer').remove();
+        $('.eraser__layer').remove();
         _t.erasers.each(function(index, el) {
             var el = $(el);
             el.removeClass('active').append('<img src="img/fake-img.png" class="eraser__layer" />');

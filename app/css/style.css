@@ -46,6 +46,9 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  background-color: #eef3fa;
+  background-image: url(../img/bg.png);
+  background-position: 50% 50%;
 }
 
 img {
@@ -91,8 +94,50 @@ select {
 
 .layout {
   max-width: 530px;
-  padding: 0 15px;
+  padding: 20px 15px;
   margin: 0 auto;
+}
+
+.layout__swips {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.header {
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  padding: 15px;
+  text-align: center;
+}
+
+.header__logo {
+  font-size: 25px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #ff0054;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header__logo::before {
+  content: '';
+  width: 35px;
+  height: 35px;
+  background-color: #b9b9b9;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  margin-right: 10px;
+}
+
+.header__sign {
+  font-size: 18px;
+  color: #0011b7;
+  margin: 5px 0 0;
+  font-weight: 400;
 }
 
 .stack {
@@ -247,12 +292,77 @@ select {
   right: 15px;
 }
 
-/* Desktop-frist */
-@media only screen and (max-width: 991px) {
-  /**/
+.comments {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
 }
 
-/* Mobile-first */
-@media only screen and (min-width: 992px) {
-  /**/
+.comments__title {
+  text-align: center;
+  font-size: 22px;
+  color: #ff0054;
+  margin: 0 0 20px;
+}
+
+.comments__item {
+  margin-top: 15px;
+}
+
+.review__ava {
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.review__tail {
+  margin-left: 65px;
+}
+
+.review__comment {
+  font-size: 15px;
+  color: #0011b7;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.review__name, .review__date {
+  text-align: right;
+  margin: 0;
+  color: #9da9b5;
+}
+
+.review__name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 560px) {
+  .header {
+    padding: 20px;
+  }
+  .header__logo {
+    font-size: 32px;
+  }
+  .header__logo::before {
+    width: 50px;
+    height: 50px;
+  }
+  .header__sign {
+    font-size: 24px;
+  }
+  .comments__title {
+    font-size: 24px;
+  }
+  .review__ava {
+    width: auto;
+  }
+  .review__tail {
+    margin-left: 115px;
+  }
+  .review__comment, .review__name {
+    font-size: 18px;
+  }
 }

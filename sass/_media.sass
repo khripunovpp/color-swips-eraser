@@ -1,12 +1,24 @@
 @import "bourbon"
 
+@media only screen and (min-width : 560px)
+	.header
+		padding: 20px
+		&__logo
+			font-size: 32px
+			&::before
+				width: 50px
+				height: 50px
+		&__sign
+			font-size: 24px
 
-/* Desktop-frist */
-@media only screen and (max-width : 991px)
-	/**/
-
-
-/* Mobile-first */
-@media only screen and (min-width : 992px)
-	/**/
-
+	.comments__title
+		font-size: 24px
+		
+	.review
+		&__ava
+			width: auto
+		&__tail
+			margin-left: 115px
+		&__comment,
+		&__name
+			font-size: 18px
