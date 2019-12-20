@@ -225,12 +225,15 @@ select {
   top: auto;
   right: auto;
   left: auto;
-  opacity: 0;
 }
 
 .stack.e-start .stack__info {
   -webkit-transform: translate3d(-50%, 0, 0) scale(1);
   transform: translate3d(-50%, 0, 0) scale(1);
+}
+
+.stack.e-hide .eraser {
+  opacity: 0;
 }
 
 .attempts {
@@ -277,11 +280,11 @@ select {
 .eraser {
   position: relative;
   z-index: 1;
-  -webkit-transition: opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
-  transition: opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
-  -o-transition: transform 1s linear, opacity .5s .8s ease-in-out;
-  transition: transform 1s linear, opacity .5s .8s ease-in-out;
-  transition: transform 1s linear, opacity .5s .8s ease-in-out, -webkit-transform 1s linear;
+  -webkit-transition: opacity .5s ease-in-out, -webkit-transform 1s linear;
+  transition: opacity .5s ease-in-out, -webkit-transform 1s linear;
+  -o-transition: transform 1s linear, opacity .5s ease-in-out;
+  transition: transform 1s linear, opacity .5s ease-in-out;
+  transition: transform 1s linear, opacity .5s ease-in-out, -webkit-transform 1s linear;
 }
 
 .eraser.active {
@@ -422,6 +425,21 @@ select {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
+}
+
+.popup--freeze {
+  display: block;
+}
+
+.popup--freeze .popup__panel {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 }
 
 .popup__overlay {

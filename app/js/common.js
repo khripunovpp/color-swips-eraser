@@ -95,6 +95,7 @@ var swip = {
         _t.stack = $('.stack');
         _t.cards = $('.stack__card .card');
         _t.erasers = $('.eraser');
+        _t.cursor = $("#cursor");
 
         _t.timerStep = 0;
 
@@ -125,14 +126,13 @@ var swip = {
             })
         });
 
-        var cursor = $("#cursor");
         _t.stack.mousemove(function(e) {
-            cursor.show().css({
+            _t.cursor.show().css({
                 "left": e.clientX - 30,
                 "top": e.clientY - 20
             });
         }).mouseout(function() {
-            cursor.hide();
+            _t.cursor.hide();
         });
     },
 
@@ -141,19 +141,32 @@ var swip = {
             configs = _t.config;
 
         _t.stack.addClass('e-start');
-        _t.colorTimer = setInterval(function() {
-            var palette = Util.shuffleArray(configs.colorPalette[configs.currentAttempt])
-            _t.coloringCards(palette);
-        }, 200)
-
         setTimeout(function() {
-            _t.stopShuffle();
-        }, 3000)
-    },
+            _t.hideItems(function() {
 
+                _t.colorTimer = setInterval(function() {
+                    var palette = Util.shuffleArray(configs.colorPalette[configs.currentAttempt])
+                    _t.coloringCards(palette);
+                }, 400)
+                setTimeout(function() {
+                    _t.stopShuffle();
+                }, 3000)
+
+            });
+        }, configs.currentAttempt >= configs.winnerAttempt ? 0 : 2000)
+
+
+    },
+    hideItems: function(cb) {
+        var _t = this;
+        _t.stack.addClass('e-hide');
+        cb();
+    },
     coloringCards: function(palette) {
         var _t = this,
             configs = _t.config;
+
+        _t.cursor.css('opacity', '.5');
 
         _t.cards.each(function(index, el) {
             var color1 = palette[index][0],
@@ -171,6 +184,7 @@ var swip = {
             configs = _t.config;
         clearInterval(_t.colorTimer);
         _t.makeErasers();
+         _t.cursor.css('opacity', '1');
     },
     makeErasers: function() {
         var _t = this,
@@ -241,7 +255,7 @@ var swip = {
         _t.erasers.eq(randIndex).addClass('eraser--phone');
         _t.erasers.addClass('active');
         $('.eraser__layer').remove();
-         setTimeout(function() {
+        setTimeout(function() {
             _t.reBuild();
             _t.openPopup('#popupLoose');
         }, 1700)
