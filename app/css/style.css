@@ -368,7 +368,12 @@ select {
 }
 
 .comments__item {
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+.review {
+  clear: both;
+  min-height: 50px;
 }
 
 .review__ava {
@@ -427,7 +432,7 @@ select {
 
 .popup__wrapper {
   vertical-align: top;
-  padding: 90px 15px;
+  padding: 15px;
 }
 
 .popup__panel {
@@ -481,10 +486,10 @@ select {
   font-size: 18px;
   color: #0011b7;
   line-height: 1.2;
+  text-align: center;
 }
 
 .popup__rules {
-  text-align: center;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -583,6 +588,12 @@ select {
   .comments__title {
     font-size: 24px;
   }
+  .comments__item {
+    margin-top: 35px;
+  }
+  .review {
+    min-height: 100px;
+  }
   .review__ava {
     width: auto;
   }
@@ -594,6 +605,9 @@ select {
   }
   .popup__close {
     right: -35px;
+  }
+  .popup__wrapper {
+    padding: 90px 15px;
   }
   .stack {
     cursor: default;
