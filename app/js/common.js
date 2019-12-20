@@ -57,10 +57,28 @@ var swip = {
 
         _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
-        // setTimeout(function() {
-        //     var ok = confirm("Начать");
-        //     ok && _t.start();
-        // }, 150)
+        _t.openPopup('#popupStart');
+
+        $('.popup__close').on('click', function(event) {
+            event.preventDefault();
+            var popupId = $(event.target).closest('.popup').attr('id');
+
+            _t.closePopup('#' + popupId)
+        });
+
+        $('.js-start').on('click', function(event) {
+            event.preventDefault();
+            _t.closePopup('#popupStart', function() {
+                _t.start();
+            })
+        });
+
+        $('.js-restart').on('click', function(event) {
+            event.preventDefault();
+            _t.closePopup('#popupLoose', function() {
+                _t.start();
+            })
+        });
     },
 
     start: function() {
@@ -156,13 +174,29 @@ var swip = {
         var _t = this,
             configs = _t.config;
 
-        alert('win')
+        _t.openPopup('#popupWin');
     },
     loose: function() {
         var _t = this,
             configs = _t.config;
 
-        _t.start()
+        _t.openPopup('#popupLoose');
+    },
+    openPopup: function(query) {
+        var _t = this;
+
+        $('body').css('overflow', 'hidden');
+
+        $(query).fadeIn(400, function() {
+            $(this).addClass('showed')
+        });
+    },
+    closePopup: function(query, cb) {
+        var _t = this;
+
+        $('body').css('overflow', 'initial');
+        $(query).removeClass('showed')
+        $(query).fadeOut(200, cb);
     }
 }
 

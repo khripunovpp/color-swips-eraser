@@ -28,9 +28,9 @@
         </div>
         <div class="layout__swips">
           <section class="stack">
-            <aside class="stack__timer timer">
-              <div class="timer__time js-timer"></div>
-              <div class="timer__left"><strong class="js-attempts"></strong></div>
+            <aside class="stack__timer">
+              <p class="timer js-timer"></p>
+              <p class="attempts"><strong class="js-attempts"></strong></p>
             </aside>
             <div class="stack__pics">
               <div class="stack__pic eraser eraser--phone">
@@ -84,6 +84,49 @@
           </section>
         </div>
       </section>
+      <aside class="popup" id="popupWin">
+        <table class="popup__overlay">
+          <tr>
+            <td class="popup__wrapper">
+              <div class="popup__panel"><img class="popup__pic" src="img/prize.png" alt="">
+                <div class="popup__timer">
+                  <p class="timer js-timer">00:00</p>
+                </div><a class="popup__btn btn" href=""><span class="btn__sign">Перейти</span><span class="btn__icon"></span></a>
+                <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </aside>
+      <aside class="popup" id="popupStart">
+        <table class="popup__overlay">
+          <tr>
+            <td class="popup__wrapper">
+              <div class="popup__panel"><img class="popup__pic" src="img/rules.png" alt="">
+                <ul class="popup__rules">
+                  <li>1. Далеко-далеко за словесными горами в стране.</li>
+                  <li>2.Cловесными горами в стране.</li>
+                  <li>Далеко-далеко за </li>
+                </ul>
+                <button class="popup__btn btn js-start"><span class="btn__sign">Понятно</span><span class="btn__icon"></span></button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </aside>
+      <aside class="popup" id="popupLoose">
+        <table class="popup__overlay">
+          <tr>
+            <td class="popup__wrapper">
+              <div class="popup__panel">
+                <h2 class="popup__title">Oh noooo((</h2>
+                <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="popup__btn btn js-restart"><span class="btn__sign">Еще раз</span><span class="btn__icon"></span></button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </aside>
     </div><!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН-->
     <script src="js/jquery.eraser.CUSTOMIZED.js"></script>
     <script src="js/common.js"></script>

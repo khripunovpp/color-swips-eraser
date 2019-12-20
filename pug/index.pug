@@ -26,9 +26,9 @@ html
 						h1.header__sign Выбери коробку и выиграй телефон!
 				.layout__swips
 					section.stack
-						aside.stack__timer.timer
-							.timer__time.js-timer
-							.timer__left
+						aside.stack__timer
+							p.timer.js-timer
+							p.attempts
 								strong.js-attempts
 						.stack__pics
 							.stack__pic.eraser.eraser--phone
@@ -68,7 +68,41 @@ html
 									p.review__comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 									p.review__name — Lorem ipsum dolor sit
 									p.review__date 27 минут назад
-
+			aside.popup#popupWin
+				table.popup__overlay
+					tr
+						td.popup__wrapper
+							.popup__panel
+								img.popup__pic(src="img/prize.png", alt="")
+								.popup__timer
+									p.timer.js-timer 00:00
+								a.popup__btn.btn(href="")
+									span.btn__sign Перейти
+									span.btn__icon
+								p.popup__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			aside.popup#popupStart
+				table.popup__overlay
+					tr
+						td.popup__wrapper
+							.popup__panel
+								img.popup__pic(src="img/rules.png", alt="")
+								ul.popup__rules
+									li 1. Далеко-далеко за словесными горами в стране.
+									li 2.Cловесными горами в стране.
+									li Далеко-далеко за 
+								button.popup__btn.btn.js-start
+									span.btn__sign Понятно
+									span.btn__icon
+			aside.popup#popupLoose
+				table.popup__overlay
+					tr
+						td.popup__wrapper
+							.popup__panel
+								h2.popup__title Oh noooo((
+								p.popup__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								button.popup__btn.btn.js-restart
+									span.btn__sign Еще раз
+									span.btn__icon
 		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН-->
 		script(src="js/jquery.eraser.CUSTOMIZED.js")
 		script(src="js/common.js")
