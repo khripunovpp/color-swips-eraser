@@ -162,7 +162,8 @@
                             completeRatio: completeRatio,
                             completeFunction: completeFunction,
                             progressFunction: progressFunction,
-                            zIndex: zIndex
+                            zIndex: zIndex,
+                            canvas: $canvas
                         };
                         $canvas.data('eraser', data);
 
@@ -270,7 +271,7 @@
                         data.complete = true;
                         if (data.completeFunction != null) data.completeFunction();
                     } else {
-                        if (data.progressFunction != null) data.progressFunction(p);
+                        if (data.progressFunction != null) data.progressFunction(p, data.canvas);
                     }
                 }
             }
