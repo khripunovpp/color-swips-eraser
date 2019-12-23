@@ -277,6 +277,11 @@ select {
   opacity: .3;
 }
 
+.card.disable {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .eraser {
   position: relative;
   z-index: 1;
@@ -292,6 +297,11 @@ select {
   -o-transition: none;
   transition: none;
   opacity: 1 !important;
+}
+
+.eraser.disable {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .eraser__layer {

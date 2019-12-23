@@ -205,6 +205,8 @@ select
 		left: 10px
 		right: 10px
 		opacity: .3
+	&.disable
+		filter: grayscale(1)
 
 .eraser
 	position: relative
@@ -213,6 +215,8 @@ select
 	&.active
 		transition: none
 		opacity: 1 !important
+	&.disable
+		filter: grayscale(1)
 	&__layer
 		position: absolute
 		top: 0

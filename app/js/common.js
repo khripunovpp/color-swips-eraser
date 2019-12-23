@@ -134,6 +134,8 @@ var swip = {
         }).mouseout(function() {
             _t.cursor.hide();
         });
+
+        _t.comments();
     },
 
     start: function() {
@@ -141,6 +143,7 @@ var swip = {
             configs = _t.config;
 
         _t.stack.addClass('e-start');
+        _t.cards.add(_t.erasers).removeClass('active disable');
         setTimeout(function() {
             _t.hideItems(function() {
 
@@ -184,7 +187,7 @@ var swip = {
             configs = _t.config;
         clearInterval(_t.colorTimer);
         _t.makeErasers();
-         _t.cursor.css('opacity', '1');
+        _t.cursor.css('opacity', '1');
     },
     makeErasers: function() {
         var _t = this,
@@ -203,7 +206,6 @@ var swip = {
                 completeFunction: _t.results.bind(_t)
             });
         });
-
     },
     disableErasers: function() {
         var _t = this,
@@ -212,7 +214,7 @@ var swip = {
         _t.erasers.each(function(index, el) {
             var currentEraser = $(el);
             index !== _t.currentCardIndex ?
-                currentEraser.find('.eraser__layer').eraser('disable') :
+                (currentEraser.addClass('disable').find('.eraser__layer').eraser('disable'), _t.cards.eq(index).addClass('disable')) :
                 currentEraser.addClass('active');
             index === _t.currentCardIndex && configs.currentAttempt >= configs.winnerAttempt ?
                 currentEraser.addClass('eraser--phone') :
@@ -254,7 +256,9 @@ var swip = {
 
         _t.erasers.eq(randIndex).addClass('eraser--phone');
         _t.erasers.addClass('active');
-        $('.eraser__layer').remove();
+        $('.eraser__layer').fadeOut(function() {
+            $(this).remove();
+        });
         setTimeout(function() {
             _t.reBuild();
             _t.openPopup('#popupLoose');
@@ -293,6 +297,27 @@ var swip = {
             if (count === 1) clearInterval(timerId);
             el.text(count);
         }, 6000)
+    },
+    comments: function() {
+        var _t = this;
+
+        var comments = $('.comments__item').clone(),
+            list = $('.comments__list'),
+            maxComments = 5;
+
+        list.html('');
+        var spliced = comments.splice(maxComments);
+        list.html(spliced);
+
+        var i = comments.length,
+            nextComment;
+
+        var timer = setInterval(function() {
+            i--;
+            if (i == 0) clearInterval(timer);
+            nextComment = comments.eq(i);
+            $('.comments__item').first().html(nextComment);
+        }, 5000)
     }
 }
 
