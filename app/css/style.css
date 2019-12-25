@@ -185,8 +185,8 @@ select {
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  -webkit-animation: 1.3s both;
-  animation: 1.3s both;
+  -webkit-animation: 1.8s both;
+  animation: 1.8s both;
 }
 
 .stack__cards, .stack__pics {
