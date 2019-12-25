@@ -142,8 +142,9 @@ var swip = {
         var _t = this,
             configs = _t.config;
 
+        _t.cards.add(_t.erasers).add(_t.stack).removeClass('active disable e-start e-hide e-cloud');
+
         _t.stack.addClass('e-start');
-        _t.cards.add(_t.erasers).removeClass('active disable');
         setTimeout(function() {
             _t.hideItems(function() {
 
@@ -187,6 +188,7 @@ var swip = {
             configs = _t.config;
         clearInterval(_t.colorTimer);
         _t.makeErasers();
+        _t.stack.addClass('e-cloud');
         _t.cursor.css('opacity', '1');
     },
     makeErasers: function() {
@@ -316,8 +318,9 @@ var swip = {
             i--;
             if (i == 0) clearInterval(timer);
             nextComment = comments.eq(i);
-            $('.comments__item').first().html(nextComment);
-        }, 5000)
+            list.prepend(nextComment);
+            $('.comments__item').last().remove();
+        }, Util.randomInteger(1000, 4000))
     }
 }
 
