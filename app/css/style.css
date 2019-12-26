@@ -187,6 +187,11 @@ select {
   transition: all .2s ease-in-out;
   -webkit-animation: 1.8s both;
   animation: 1.8s both;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .stack__cards, .stack__pics {
@@ -654,6 +659,7 @@ select {
     -webkit-transform: translateX(-50%) scale(1.2);
     transform: translateX(-50%) scale(1.2);
     opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -662,6 +668,7 @@ select {
     -webkit-transform: translateX(-50%) scale(1.2);
     transform: translateX(-50%) scale(1.2);
     opacity: 0;
+    visibility: hidden;
   }
 }
 
