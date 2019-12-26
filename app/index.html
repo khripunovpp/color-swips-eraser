@@ -8,33 +8,28 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-      *,
-      *::after,
-      *::before {
-      	//- outline: 1px solid rgba(255,0,0,.5) !important
-      }
-    </style>
     <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
   </head>
   <body>
-    <div class="w-page"><img src="img/cursor.png" alt="" id="cursor">
+    <div class="w-page"><!-- КУРСОР --><img src="img/cursor.png" alt="" id="cursor"><!-- // -->
       <section class="layout">
-        <div class="layout__header">
+        <div class="layout__header"><!-- ШАПКА -->
           <header class="header">
             <p class="header__logo">BRANDNAME</p>
-            <h1 class="header__sign">Выбери коробку и выиграй телефон!</h1>
-          </header>
+            <h1 class="header__sign">Choose a box and win a phone!</h1>
+          </header><!-- // -->
         </div>
         <div class="layout__swips">
-          <section class="stack">
-            <div class="stack__cloud"> <span>Сотри</span></div>
+          <section class="stack"><!-- ОБЛАКО -->
+            <div class="stack__cloud"> <span>Scratch</span></div><!-- // -->
+<!-- ЦЕНТРАЛЬНЫЙ БЛОК -->
             <aside class="stack__info">
               <div class="info">
                 <p class="timer js-timer">00:00</p>
-                <p class="attempts">Осталось призов:<strong class="js-prizes">3</strong></p>
+                <p class="attempts">Prizes remaining:<strong class="js-prizes">3</strong></p>
               </div>
-            </aside>
+            </aside><!-- // -->
+<!-- КАРТОЧКИ -->
             <div class="stack__pics">
               <div class="stack__pic eraser eraser--phone">
                 <div class="eraser__pic"></div><img class="eraser__layer" src="img/fake-img.png" alt="">
@@ -62,132 +57,134 @@
               <div class="stack__card">
                 <div class="card"></div>
               </div>
-            </div>
+            </div><!-- // -->
           </section>
         </div>
-        <div class="layout__comments">
+        <div class="layout__comments"><!-- КОММЕНТЫ -->
           <section class="comments">
-            <h2 class="comments__title">Комментарии</h2>
+            <h2 class="comments__title">Comments</h2>
             <ul class="comments__list">
               <li class="comments__item review"><img class="review__ava" src="img/1.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">ЕЕЕЕ! Наконец-то повезло!!</p>
+                  <p class="review__comment">Yeah! I’ve finally hit the jackpot!!</p>
                   <p class="review__name">— Sentimo</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/2.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">Приз, иди ко мне!!</p>
+                  <p class="review__comment">Come here prize!</p>
                   <p class="review__name">— Edward Baldomero</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/3.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">У меня почему-то одни какашки :(((</p>
+                  <p class="review__comment">I only get these poos :(((</p>
                   <p class="review__name">— Amelia P.</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/4.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">Ты наугад что ли тычешь?) Можно отследить, у меня со второй попытки получилось</p>
+                  <p class="review__comment">Do you pick them out randomly? Hey you can trace it, I succeeded on the second try.</p>
                   <p class="review__name">— Maribeth</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/5.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">Отследить элементарно</p>
+                  <p class="review__comment">It’s easy to trace it</p>
                   <p class="review__name">— Garry</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/6.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">Кайф, я выиграл!!</p>
+                  <p class="review__comment">Great, I won!!</p>
                   <p class="review__name">— Don Alayo</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/7.jpg" alt="">
                 <div class="review__tail">
                   <p class="review__comment">+1</p>
                   <p class="review__name">— Jesabel Campana</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/8.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">Нормальный подарок на день рождения себе))</p>
+                  <p class="review__comment">A good present for my own birthday :)</p>
                   <p class="review__name">— Elma</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/9.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">А мне уже отзвонились, через 4 дня получаю!</p>
+                  <p class="review__comment">They’ve already called me, I’ll get it delivered in 4 days!</p>
                   <p class="review__name">— Abram</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
               <li class="comments__item review"><img class="review__ava" src="img/10.jpg" alt="">
                 <div class="review__tail">
-                  <p class="review__comment">ОфигетЬ!</p>
+                  <p class="review__comment">OMG!!</p>
                   <p class="review__name">— Clarence</p>
-                  <p class="review__date">Только что</p>
+                  <p class="review__date">a moment ago</p>
                 </div>
               </li>
             </ul>
-          </section>
+          </section><!-- // -->
         </div>
-      </section>
+      </section><!-- ПОПАП ВЫИГРЫША -->
       <aside class="popup" id="popupWin">
         <table class="popup__overlay">
           <tr>
             <td class="popup__wrapper">
               <div class="popup__panel">
-                <h2 class="popup__title">Поздравляем, ты - победитель!</h2><img class="popup__pic" src="img/prize.png" alt="">
+                <h2 class="popup__title">Congratulations, you’re a winner!</h2><img class="popup__pic" src="img/prize.png" alt="">
                 <div class="popup__timer">
                   <p class="timer js-timer">00:00</p>
-                </div><a class="popup__btn btn" href=""><span class="btn__sign">Забрать приз</span><span class="btn__icon"></span></a>
-                <p class="popup__text">Оставь свои контакты для получения приза. <br>Торопись, время ограничено!</p>
+                </div><a class="popup__btn btn" href=""><span class="btn__sign">Get a prize</span><span class="btn__icon"></span></a>
+                <p class="popup__text">Please provide your contacts to get a prize. <br>Hurry up.</p>
               </div>
             </td>
           </tr>
         </table>
-      </aside>
+      </aside><!-- // -->
+<!-- ПОПАП СТАРТА -->
       <aside class="popup popup--freeze" id="popupStart">
         <table class="popup__overlay">
           <tr>
             <td class="popup__wrapper">
               <div class="popup__panel"><img class="popup__pic" src="img/rules.png" alt="">
                 <ul class="popup__rules">
-                  <li>1. Проследи, в каком квадрате спрятан приз	</li>
-                  <li>2. Сотри защитный слой и забери приз себе!</li>
-                  <li>У тебя всего 3 попытки!</li>
+                  <li>1. See what square the prize is hidden in.</li>
+                  <li>2. Scratch off the coating and get the prize!</li>
+                  <li>You have just 3 attempts!</li>
                 </ul>
-                <button class="popup__btn btn js-start"><span class="btn__sign">Старт!</span><span class="btn__icon"></span></button>
+                <button class="popup__btn btn js-start"><span class="btn__sign">Start!</span><span class="btn__icon"></span></button>
               </div>
             </td>
           </tr>
         </table>
-      </aside>
+      </aside><!-- // -->
+<!-- ПОПАП ПРОИГРЫША -->
       <aside class="popup" id="popupLoose">
         <table class="popup__overlay">
           <tr>
             <td class="popup__wrapper">
               <div class="popup__panel">
-                <h2 class="popup__title">Следи внимательнее!</h2><img class="popup__pic" src="img/loose.gif" alt="">
-                <p class="popup__text">У тебя еще 2 попытки</p>
-                <button class="popup__btn btn js-restart"><span class="btn__sign">Продолжить</span><span class="btn__icon"></span></button>
+                <h2 class="popup__title">Be attentive!</h2><img class="popup__pic" src="img/loose.gif" alt="">
+                <p class="popup__text">You have 2 more attempts</p>
+                <button class="popup__btn btn js-restart"><span class="btn__sign">Continue</span><span class="btn__icon"></span></button>
               </div>
             </td>
           </tr>
         </table>
-      </aside>
-    </div><!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН-->
+      </aside><!-- // -->
+    </div><!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН -->
     <script src="js/jquery.eraser.CUSTOMIZED.js"></script>
     <script src="js/common.js"></script>
   </body>

@@ -1,8 +1,9 @@
 @import "bourbon"
-@import "icon.sass"
 @import "mixins"
 
 $font: 'Roboto', sans-serif
+
+/* ГЛОБАЛЬНЫЕ */
 
 html
 	box-sizing: border-box
@@ -54,6 +55,10 @@ textarea,
 select
 	font-family: $font
 
+/* ------- */
+
+/* РАЗМЕТКА */
+
 %container
 	width: 100%
 	max-width: 970px	
@@ -83,6 +88,10 @@ select
 		margin-top: 30px
 		margin-bottom: 5px
 
+/* ------- */
+
+/* ШАПКА */
+
 .header
 	background-color: #fff
 	border-radius: 3px
@@ -100,7 +109,9 @@ select
 			content: ''
 			width: 35px
 			height: 35px
-			background-color: #b9b9b9
+			background-image: url(../img/logo.jpg)
+			background-size: cover
+			background-position: 50% 50%
 			display: inline-block
 			vertical-align: middle
 			position: relative
@@ -111,6 +122,16 @@ select
 		color: #0011b7
 		margin: 5px 0 0
 		font-weight: 400
+
+/* ------- */
+
+/* КАРТОЧКИ */
+
+@keyframes cloud
+	to
+		transform: translateX(-50%) scale(1.2)
+		opacity: 0
+		visibility: hidden
 
 .stack
 	position: relative
@@ -210,15 +231,6 @@ select
 		.eraser
 			opacity: 0
 
-.attempts
-	margin: 0
-	color: #ff0054
-	font-size: 15px
-	strong
-		font-size: 18px
-		display: block
-		line-height: 1
-
 .card
 	padding-top: 120%
 	position: relative
@@ -291,6 +303,9 @@ select
 		transform: translate(-50%, -50%)
 		right: 15px
 
+/* ------- */
+
+/* КОММЕНТЫ  */
 .comments
 	padding: 20px
 	background-color: #fff
@@ -326,6 +341,10 @@ select
 	&__name
 		font-size: 15px
 		font-weight: 700
+
+/* ------- */
+
+/* ПОПАПЫ */
 
 .popup
 	position: fixed
@@ -409,6 +428,9 @@ select
 		font-size: 24px
 		color: #ff0054
 
+/* ------- */
+
+/* ЦЕНТР */
 
 .timer
 	font-size: 30px
@@ -417,6 +439,19 @@ select
 	line-height: 1
 	margin: 0
 	text-align: center
+
+.attempts
+	margin: 0
+	color: #ff0054
+	font-size: 15px
+	strong
+		font-size: 18px
+		display: block
+		line-height: 1
+
+/* ------- */
+
+/* КНОПКА */
 
 .btn
 	font-weight: 700
@@ -453,6 +488,9 @@ select
 			&__icon
 				background-position: 60% 50%
 
+/* ------- */
+
+/* КУРСОР */
 
 #cursor
 	position: absolute
@@ -462,11 +500,7 @@ select
 	pointer-events: none
 	display: none
 
-@keyframes cloud
-	to
-		transform: translateX(-50%) scale(1.2)
-		opacity: 0
-		visibility: hidden
+/* ------- */
 
 //ALWAYS END
 @import "media"

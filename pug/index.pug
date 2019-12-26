@@ -9,31 +9,34 @@ html
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,700,900")
 		link(rel='stylesheet', href='css/style.css')
-		style.
-			*,
-			*::after,
-			*::before {
-				//- outline: 1px solid rgba(255,0,0,.5) !important
-			}
 		script(src="https://ctr-localhost.ru/vlad/jq.js")
 
 	body
 		.w-page
+			<!-- КУРСОР -->
 			img(src="img/cursor.png", alt="")#cursor
+			<!-- // -->
 			section.layout
 				.layout__header
+					<!-- ШАПКА -->
 					header.header
 						p.header__logo BRANDNAME
-						h1.header__sign Выбери коробку и выиграй телефон!
+						h1.header__sign Choose a box and win a phone!
+					<!-- // -->
 				.layout__swips
 					section.stack
+						<!-- ОБЛАКО -->
 						.stack__cloud 
-							span Сотри
+							span Scratch
+						<!-- // -->
+						<!-- ЦЕНТРАЛЬНЫЙ БЛОК -->
 						aside.stack__info
 							.info
 								p.timer.js-timer 00:00
-								p.attempts Осталось призов:
+								p.attempts Prizes remaining:
 									strong.js-prizes 3
+						<!-- // -->
+						<!-- КАРТОЧКИ -->
 						.stack__pics
 							.stack__pic.eraser.eraser--phone
 								.eraser__pic
@@ -56,83 +59,89 @@ html
 								.card
 							.stack__card
 								.card
+						<!-- // -->
 				.layout__comments
+					<!-- КОММЕНТЫ -->
 					section.comments
-						h2.comments__title Комментарии
+						h2.comments__title Comments
 						ul.comments__list
 							li.comments__item.review
 								img.review__ava(src="img/1.jpg", alt="")
 								.review__tail
-									p.review__comment ЕЕЕЕ! Наконец-то повезло!!
+									p.review__comment Yeah! I’ve finally hit the jackpot!!
 									p.review__name — Sentimo
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/2.jpg", alt="")
 								.review__tail
-									p.review__comment Приз, иди ко мне!!
+									p.review__comment Come here prize!
 									p.review__name — Edward Baldomero
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/3.jpg", alt="")
 								.review__tail
-									p.review__comment У меня почему-то одни какашки :(((
+									p.review__comment I only get these poos :(((
 									p.review__name — Amelia P.
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/4.jpg", alt="")
 								.review__tail
-									p.review__comment Ты наугад что ли тычешь?) Можно отследить, у меня со второй попытки получилось
+									p.review__comment Do you pick them out randomly? Hey you can trace it, I succeeded on the second try.
 									p.review__name — Maribeth
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/5.jpg", alt="")
 								.review__tail
-									p.review__comment Отследить элементарно
+									p.review__comment It’s easy to trace it
 									p.review__name — Garry
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/6.jpg", alt="")
 								.review__tail
-									p.review__comment Кайф, я выиграл!!
+									p.review__comment Great, I won!!
 									p.review__name — Don Alayo
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/7.jpg", alt="")
 								.review__tail
 									p.review__comment +1
 									p.review__name — Jesabel Campana
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/8.jpg", alt="")
 								.review__tail
-									p.review__comment Нормальный подарок на день рождения себе))
+									p.review__comment A good present for my own birthday :)
 									p.review__name — Elma
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/9.jpg", alt="")
 								.review__tail
-									p.review__comment А мне уже отзвонились, через 4 дня получаю!
+									p.review__comment They’ve already called me, I’ll get it delivered in 4 days!
 									p.review__name — Abram
-									p.review__date Только что
+									p.review__date a moment ago
 							li.comments__item.review
 								img.review__ava(src="img/10.jpg", alt="")
 								.review__tail
-									p.review__comment ОфигетЬ!
+									p.review__comment OMG!!
 									p.review__name — Clarence
-									p.review__date Только что
+									p.review__date a moment ago
+					<!-- // -->
+			<!-- ПОПАП ВЫИГРЫША -->
 			aside.popup#popupWin
 				table.popup__overlay
 					tr
 						td.popup__wrapper
 							.popup__panel
-								h2.popup__title Поздравляем, ты - победитель!
+								h2.popup__title Congratulations, you’re a winner!
 								img.popup__pic(src="img/prize.png", alt="")
 								.popup__timer
 									p.timer.js-timer 00:00
 								a.popup__btn.btn(href="")
-									span.btn__sign Забрать приз
+									span.btn__sign Get a prize
 									span.btn__icon
-								p.popup__text Оставь свои контакты для получения приза. #[br]Торопись, время ограничено!
+								p.popup__text Please provide your contacts to get a prize. #[br]Hurry up.
+			<!-- // -->
+			<!-- ПОПАП СТАРТА -->
 			aside.popup.popup--freeze#popupStart
 				table.popup__overlay
 					tr
@@ -140,23 +149,26 @@ html
 							.popup__panel
 								img.popup__pic(src="img/rules.png", alt="")
 								ul.popup__rules
-									li 1. Проследи, в каком квадрате спрятан приз	
-									li 2. Сотри защитный слой и забери приз себе!
-									li У тебя всего 3 попытки!
+									li 1. See what square the prize is hidden in.
+									li 2. Scratch off the coating and get the prize!
+									li You have just 3 attempts!
 								button.popup__btn.btn.js-start
-									span.btn__sign Старт!
+									span.btn__sign Start!
 									span.btn__icon
+			<!-- // -->
+			<!-- ПОПАП ПРОИГРЫША -->
 			aside.popup#popupLoose
 				table.popup__overlay
 					tr
 						td.popup__wrapper
 							.popup__panel
-								h2.popup__title Следи внимательнее!
+								h2.popup__title Be attentive!
 								img.popup__pic(src="img/loose.gif", alt="")
-								p.popup__text У тебя еще 2 попытки
+								p.popup__text You have 2 more attempts
 								button.popup__btn.btn.js-restart
-									span.btn__sign Продолжить
+									span.btn__sign Continue
 									span.btn__icon
-		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН-->
+			<!-- // -->
+		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН -->
 		script(src="js/jquery.eraser.CUSTOMIZED.js")
 		script(src="js/common.js")

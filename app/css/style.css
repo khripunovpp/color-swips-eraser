@@ -1,11 +1,5 @@
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?cwhh4a");
-  src: url("../fonts/icomoon.eot?cwhh4a#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?cwhh4a") format("truetype"), url("../fonts/icomoon.woff?cwhh4a") format("woff"), url("../fonts/icomoon.svg?cwhh4a#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
+@charset "UTF-8";
+/* ГЛОБАЛЬНЫЕ */
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -85,6 +79,8 @@ select {
   font-family: "Roboto", sans-serif;
 }
 
+/* ------- */
+/* РАЗМЕТКА */
 .container {
   width: 100%;
   max-width: 970px;
@@ -107,6 +103,8 @@ select {
   margin-bottom: 5px;
 }
 
+/* ------- */
+/* ШАПКА */
 .header {
   background-color: #fff;
   border-radius: 3px;
@@ -129,7 +127,9 @@ select {
   content: '';
   width: 35px;
   height: 35px;
-  background-color: #b9b9b9;
+  background-image: url(../img/logo.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -142,6 +142,25 @@ select {
   color: #0011b7;
   margin: 5px 0 0;
   font-weight: 400;
+}
+
+/* ------- */
+/* КАРТОЧКИ */
+@-webkit-keyframes cloud {
+  to {
+    -webkit-transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes cloud {
+  to {
+    -webkit-transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .stack {
@@ -290,18 +309,6 @@ select {
   opacity: 0;
 }
 
-.attempts {
-  margin: 0;
-  color: #ff0054;
-  font-size: 15px;
-}
-
-.attempts strong {
-  font-size: 18px;
-  display: block;
-  line-height: 1;
-}
-
 .card {
   padding-top: 120%;
   position: relative;
@@ -419,6 +426,8 @@ select {
   right: 15px;
 }
 
+/* ------- */
+/* КОММЕНТЫ  */
 .comments {
   padding: 20px;
   background-color: #fff;
@@ -471,6 +480,8 @@ select {
   font-weight: 700;
 }
 
+/* ------- */
+/* ПОПАПЫ */
 .popup {
   position: fixed;
   z-index: 7;
@@ -589,6 +600,8 @@ select {
   color: #ff0054;
 }
 
+/* ------- */
+/* ЦЕНТР */
 .timer {
   font-size: 30px;
   font-weight: 700;
@@ -598,6 +611,20 @@ select {
   text-align: center;
 }
 
+.attempts {
+  margin: 0;
+  color: #ff0054;
+  font-size: 15px;
+}
+
+.attempts strong {
+  font-size: 18px;
+  display: block;
+  line-height: 1;
+}
+
+/* ------- */
+/* КНОПКА */
 .btn {
   font-weight: 700;
   font-size: 16px;
@@ -645,6 +672,8 @@ select {
   background-position: 60% 50%;
 }
 
+/* ------- */
+/* КУРСОР */
 #cursor {
   position: absolute;
   z-index: 6;
@@ -654,24 +683,7 @@ select {
   display: none;
 }
 
-@-webkit-keyframes cloud {
-  to {
-    -webkit-transform: translateX(-50%) scale(1.2);
-    transform: translateX(-50%) scale(1.2);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes cloud {
-  to {
-    -webkit-transform: translateX(-50%) scale(1.2);
-    transform: translateX(-50%) scale(1.2);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
+/* ------- */
 @media only screen and (max-width: 591px) {
   #cursor {
     display: none !important;
