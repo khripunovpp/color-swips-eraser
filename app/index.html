@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Choose a box and win a phone!</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -11,13 +11,95 @@
     <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
   </head>
   <body>
-    <div class="w-page"><!-- КУРСОР --><img src="img/cursor.png" alt="" id="cursor"><!-- // -->
+    <div class="w-page"><!-- КУРСОР -->
+<!-- // -->
       <section class="layout">
         <div class="layout__header"><!-- ШАПКА -->
           <header class="header">
             <p class="header__logo">BRANDNAME</p>
             <h1 class="header__sign">Choose a box and win a phone!</h1>
           </header><!-- // -->
+        </div>
+        <div class="layout__questions">
+          <section class="questions">
+            <p class="questions__disclamer">Ответь на несколько простых вопросов!</p>
+            <div class="questions__content">
+              <div class="questions__top">
+                <ul class="questions__questions">
+                  <li class="questions__questions-item active">Какой из приведенных логотипов принадлежит компании Samsung?</li>
+                  <li class="questions__questions-item">На каком фото изображен iPhone 11 Pro?</li>
+                  <li class="questions__questions-item">Выберите первый логотип компании Apple:</li>
+                  <li class="questions__questions-item">Укажите отличительную особенность Samsung Galaxy S 10:</li>
+                </ul>
+              </div>
+              <div class="questions__bottom">
+                <ul class="questions__propgress propgress">
+                  <li class="progress__item active"></li>
+                  <li class="progress__item"></li>
+                  <li class="progress__item"></li>
+                  <li class="progress__item"></li>
+                </ul>
+                <div class="questions__answers">
+                  <ul class="questions__answers-list active">
+                    <li class="questions__answer questions__answer--pic" data-right="true">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                  </ul>
+                  <ul class="questions__answers-list">
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic" data-right="true">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                  </ul>
+                  <ul class="questions__answers-list">
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic" data-right="true">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                  </ul>
+                  <ul class="questions__answers-list">
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic" data-right="true">
+                      <button class="questions__btn"></button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         <div class="layout__swips">
           <section class="stack"><!-- ОБЛАКО -->
@@ -154,7 +236,7 @@
         </table>
       </aside><!-- // -->
 <!-- ПОПАП СТАРТА -->
-      <aside class="popup popup--freeze" id="popupStart">
+      <aside class="popup" id="popupStart">
         <table class="popup__overlay">
           <tr>
             <td class="popup__wrapper">

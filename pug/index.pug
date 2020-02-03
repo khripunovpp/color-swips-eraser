@@ -3,7 +3,7 @@ html
 
 	head
 		meta(charset='utf-8')
-		title
+		title Choose a box and win a phone!
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
@@ -14,7 +14,7 @@ html
 	body
 		.w-page
 			<!-- КУРСОР -->
-			img(src="img/cursor.png", alt="")#cursor
+			//- img(src="img/cursor.png", alt="")#cursor
 			<!-- // -->
 			section.layout
 				.layout__header
@@ -23,6 +23,60 @@ html
 						p.header__logo BRANDNAME
 						h1.header__sign Choose a box and win a phone!
 					<!-- // -->
+				.layout__questions
+					section.questions
+						p.questions__disclamer Ответь на несколько простых вопросов!
+						.questions__content
+							.questions__top
+								ul.questions__questions
+									li.questions__questions-item.active Какой из приведенных логотипов принадлежит компании Samsung?
+									li.questions__questions-item На каком фото изображен iPhone 11 Pro?
+									li.questions__questions-item Выберите первый логотип компании Apple:
+									li.questions__questions-item Укажите отличительную особенность Samsung Galaxy S 10:
+							.questions__bottom
+								ul.questions__propgress.propgress
+									li.progress__item.active
+									li.progress__item
+									li.progress__item
+									li.progress__item
+								.questions__answers
+									ul.questions__answers-list.active
+										li.questions__answer.questions__answer--pic(data-right="true")
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+									ul.questions__answers-list
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer(data-right="true").questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+									ul.questions__answers-list
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer(data-right="true").questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+									ul.questions__answers-list
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer.questions__answer--pic
+											button.questions__btn
+										li.questions__answer(data-right="true").questions__answer--pic
+											button.questions__btn
+							
 				.layout__swips
 					section.stack
 						<!-- ОБЛАКО -->
@@ -142,7 +196,7 @@ html
 								p.popup__text Please provide your contacts to get a prize. #[br]Hurry up.
 			<!-- // -->
 			<!-- ПОПАП СТАРТА -->
-			aside.popup.popup--freeze#popupStart
+			aside.popup#popupStart
 				table.popup__overlay
 					tr
 						td.popup__wrapper

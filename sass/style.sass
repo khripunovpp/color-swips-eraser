@@ -84,9 +84,12 @@ select
 	max-width: 530px	
 	padding: 20px 15px
 	margin: 0 auto
+	&__questions
+		margin: 30px 0
 	&__swips
 		margin-top: 30px
 		margin-bottom: 5px
+		display: none
 
 /* ------- */
 
@@ -487,6 +490,132 @@ select
 		.btn
 			&__icon
 				background-position: 60% 50%
+
+/* ------- */
+
+/* ОПРОСНИК */
+
+.questions
+	text-align: center
+	&__content
+		display: none
+	&__top
+		margin-bottom: 40px
+	&__disclamer
+		font-size: 24px
+		line-height: 28px
+		margin: 0 0 40px
+	&__questions
+		font-size: 40px
+		line-height: 47px
+		&-item
+			display: none
+			visibility: hidden
+			opacity: 0
+			&.active
+				display: block
+				opacity: 1
+				visibility: visible
+				transition-property: opacity, visibility
+				transition: .2s ease-out
+	&__bottom
+		background-color: #fff
+		border-radius: 3px
+		box-shadow: 0 15px 45px rgba(#000,.06)
+		padding: 40px
+		text-align: center
+	&__progress
+	&__answers
+		&-list
+			display: none
+			opacity: 0
+			visibility: hidden
+			font-size: 0
+			margin-top: 40px
+			margin-bottom: -26px
+			&.active
+				opacity: 1
+				visibility: visible
+				display: block
+	&__answer
+		width: calc(50% - 13px)
+		display: inline-block
+		&:nth-child(even)
+			margin-left: 26px
+		&--pic
+			text-align: right
+			&:nth-child(even)
+				text-align: left
+			.questions__btn
+				width: 120px
+				height: 120px
+				font-size: 0
+				border-radius: 8px
+				background-color: transparent
+				text-align: center
+				background-position: 50% 50%
+				background-size: contain
+				border: 2px solid #E5E5E5
+				&:hover
+					border-color: #aaa
+					background-color: transparent
+				&.wrong
+					border-color: #DF3838
+					background-color: transparent
+				&.right
+					border-color: #2B9536
+					background-color: transparent
+	&__btn
+		font-size: 16px
+		line-height: 1
+		color: #fff
+		width: 100%
+		margin-bottom: 26px
+		white-space: nowrap
+		padding: 15px
+		border-radius: 50px
+		display: inline-block
+		border: none
+		background-color: #2C2C2C
+		cursor: pointer
+		&:hover
+			background-color: #444444
+		&.wrong
+			background-color: #DF3838
+		&.right
+			background-color: #2B9536
+		&.wrong,
+		&.right
+			pointer-events: none
+
+.progress
+	font-size: 0
+	line-height: 0
+	&__item
+		display: inline-block
+		width: 16px
+		height: 16px
+		animation: .2s ease both
+		background-color:#E5E5E5
+		border-radius: 50%
+		margin: 0 4px
+		&.wrong,
+		&.right
+			animation-name: answersProgress
+		&.wrong
+			background-color: #DF3838
+		&.right
+			background-color: #2B9536
+		&.active
+			background-color: #aaa
+
+@keyframes answersProgress
+	50%
+		transform: scale(1.5)
+	0%,100%
+		transform: scale(1)
+		
+
 
 /* ------- */
 
