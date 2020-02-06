@@ -20,12 +20,16 @@ html
 				.layout__header
 					<!-- ШАПКА -->
 					header.header
-						p.header__logo BRANDNAME
-						h1.header__sign Choose a box and win a phone!
+						.header__top
+							p.header__logo BRANDNAME
+							p.header__timer.timer.js-timer 00:00
+							p.header__attempts.attempts Prizes remaining:
+								span.js-prizes 3
+						h1.header__sign.active Choose a box and win a phone!
+						h1.header__sign Ответь на несколько простых вопросов!
 					<!-- // -->
 				.layout__questions
 					section.questions
-						p.questions__disclamer Ответь на несколько простых вопросов!
 						.questions__content
 							.questions__top
 								ul.questions__questions
@@ -82,13 +86,6 @@ html
 						<!-- ОБЛАКО -->
 						.stack__cloud 
 							span Scratch
-						<!-- // -->
-						<!-- ЦЕНТРАЛЬНЫЙ БЛОК -->
-						aside.stack__info
-							.info
-								p.timer.js-timer 00:00
-								p.attempts Prizes remaining:
-									strong.js-prizes 3
 						<!-- // -->
 						<!-- КАРТОЧКИ -->
 						.stack__pics

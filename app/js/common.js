@@ -111,7 +111,9 @@ var swip = {
 
     _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
-    _t.openPopup("#popupStart");
+    // _t.openPopup("#popupStart");
+
+    _t.firstStep();
 
     $(".popup__close").on("click", function(event) {
       event.preventDefault();
@@ -153,6 +155,8 @@ var swip = {
       var answer = $(this),
         isRight = answer.attr("data-right"),
         answerEl = answer.find(".questions__btn");
+      answer.siblings().addClass("disabled");
+
       isRight ? answerEl.addClass("right") : answerEl.addClass("wrong");
 
       setTimeout(function() {
@@ -186,20 +190,27 @@ var swip = {
       _t.hideQuestion(configs.questions.currentStep - 1, isRight);
       configs.questions.currentStep++;
       _t.showQuestion(configs.questions.currentStep - 1);
-    } else _t.counting();
+    } else  {
+      _t.setProgress(configs.questions.currentStep-1, isRight ? 'right' : 'wrong');
+      _t.counting()
+    };
   },
   hideQuestion: function(i, isRight) {
     var _t = this;
     _t.questionsItems.eq(i).removeClass("active");
     _t.answersItems.eq(i).removeClass("active");
-    _t.progressItems.eq(i).removeClass("active");
-    _t.progressItems.eq(i).addClass(isRight ? "right" : "wrong");
+    _t.setProgress(i, isRight ? 'right' : 'wrong')
   },
   showQuestion: function(i) {
     var _t = this;
     _t.questionsItems.eq(i).addClass("active");
     _t.answersItems.eq(i).addClass("active");
-    _t.progressItems.eq(i).addClass("active");
+  },
+  setProgress: function(i, status) {
+    var _t = this;
+    _t.progressItems.siblings().removeClass('active');
+    _t.progressItems.eq(i).addClass(status)
+    _t.progressItems.eq(i+1).addClass('active')
   },
   counting: function() {
     var _t = this;

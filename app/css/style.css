@@ -42,7 +42,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   background-color: #eef3fa;
   background-image: url(../img/bg.png);
-  background-position: 50% 50%;
+  background-position: 50% 0;
 }
 
 img {
@@ -93,8 +93,8 @@ select {
 }
 
 .layout {
-  max-width: 530px;
-  padding: 20px 15px;
+  max-width: 640px;
+  padding: 15px;
   margin: 0 auto;
 }
 
@@ -111,42 +111,76 @@ select {
 /* ------- */
 /* ШАПКА */
 .header {
-  background-color: #fff;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  padding: 15px;
+  font-size: 0;
   text-align: center;
 }
 
 .header__logo {
-  font-size: 25px;
+  font-size: 16px;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 19px;
   color: #ff0054;
   font-weight: 700;
   margin: 0;
+  display: inline-block;
+  width: 150px;
 }
 
 .header__logo::before {
   content: '';
-  width: 35px;
-  height: 35px;
+  width: 24px;
+  height: 24px;
   background-image: url(../img/logo.jpg);
   background-size: cover;
   background-position: 50% 50%;
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  top: -3px;
+  top: -2px;
   margin-right: 10px;
 }
 
 .header__sign {
-  font-size: 18px;
+  font-size: 16px;
   color: #0011b7;
-  margin: 5px 0 0;
-  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  display: none;
+}
+
+.header__sign.active {
+  display: block;
+}
+
+.header__top {
+  margin-bottom: 15px;
+}
+
+.header__timer {
+  margin: 10px 0 !important;
+}
+
+.timer {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ff0054;
+  line-height: 1;
+  margin: 0;
+}
+
+.attempts {
+  margin: 0;
+  color: #0011B7;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.attempts span {
+  color: #FF0054;
+  font-size: 20px;
+  line-height: 1;
+  width: 23px;
+  display: inline-block;
 }
 
 /* ------- */
@@ -443,9 +477,14 @@ select {
 
 .comments__title {
   text-align: center;
-  font-size: 22px;
+  font-size: 16px;
   color: #ff0054;
   margin: 0 0 20px;
+}
+
+.comments__list {
+  max-width: 425px;
+  margin: 0 auto;
 }
 
 .comments__item {
@@ -460,28 +499,27 @@ select {
 .review__ava {
   float: left;
   border-radius: 50%;
-  width: 50px;
+  width: 65px;
 }
 
 .review__tail {
-  margin-left: 65px;
+  margin-left: 72px;
 }
 
 .review__comment {
-  font-size: 15px;
+  font-size: 16px;
   color: #0011b7;
-  line-height: 1.2;
+  line-height: 19px;
   margin: 0 0 8px;
+  font-weight: 700;
 }
 
 .review__name, .review__date {
-  text-align: right;
   margin: 0;
   color: #9da9b5;
 }
 
 .review__name {
-  font-size: 15px;
   font-weight: 700;
 }
 
@@ -606,29 +644,6 @@ select {
 }
 
 /* ------- */
-/* ЦЕНТР */
-.timer {
-  font-size: 30px;
-  font-weight: 700;
-  color: #ff0054;
-  line-height: 1;
-  margin: 0;
-  text-align: center;
-}
-
-.attempts {
-  margin: 0;
-  color: #ff0054;
-  font-size: 15px;
-}
-
-.attempts strong {
-  font-size: 18px;
-  display: block;
-  line-height: 1;
-}
-
-/* ------- */
 /* КНОПКА */
 .btn {
   font-weight: 700;
@@ -691,15 +706,11 @@ select {
   margin-bottom: 40px;
 }
 
-.questions__disclamer {
+.questions__questions {
   font-size: 24px;
   line-height: 28px;
-  margin: 0 0 40px;
-}
-
-.questions__questions {
-  font-size: 40px;
-  line-height: 47px;
+  color: #FF0054;
+  font-weight: 700;
 }
 
 .questions__questions-item {
@@ -725,7 +736,7 @@ select {
   border-radius: 3px;
   -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  padding: 40px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -770,8 +781,10 @@ select {
   background-color: transparent;
   text-align: center;
   background-position: 50% 50%;
-  background-size: contain;
+  background-size: cover;
   border: 2px solid #E5E5E5;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
 }
 
 .questions__answer--pic .questions__btn:hover {
@@ -816,7 +829,7 @@ select {
   background-color: #2B9536;
 }
 
-.questions__btn.wrong, .questions__btn.right {
+.questions__btn.wrong, .questions__btn.right, .questions__btn.disabled {
   pointer-events: none;
 }
 
@@ -827,13 +840,13 @@ select {
 
 .progress__item {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 8px;
   -webkit-animation: .2s ease both;
   animation: .2s ease both;
   background-color: #E5E5E5;
   border-radius: 50%;
-  margin: 0 4px;
+  margin: 0 8px;
 }
 
 .progress__item.wrong, .progress__item.right {
@@ -850,7 +863,10 @@ select {
 }
 
 .progress__item.active {
-  background-color: #aaa;
+  background-color: #000;
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
 }
 
 @-webkit-keyframes answersProgress {
@@ -895,35 +911,33 @@ select {
 
 @media only screen and (min-width: 590px) {
   .header {
-    padding: 20px;
+    text-align: left;
   }
-  .header__logo {
-    font-size: 32px;
+  .header__logo, .header__timer, .header__attempts {
+    display: inline-block;
+    vertical-align: baseline;
   }
-  .header__logo::before {
-    width: 50px;
-    height: 50px;
+  .header__timer {
+    text-align: center;
+    width: 110px;
+    margin: 0 !important;
   }
-  .header__sign {
-    font-size: 24px;
+  .header__attempts {
+    text-align: right;
   }
-  .comments__title {
-    font-size: 24px;
+  .header__attempts, .header__logo {
+    width: -webkit-calc(50% - 55px);
+    width: calc(50% - 55px);
   }
-  .comments__item {
-    margin-top: 35px;
+  .attempts {
+    position: relative;
+    padding-right: 30px;
   }
-  .review {
-    min-height: 100px;
-  }
-  .review__ava {
-    width: auto;
-  }
-  .review__tail {
-    margin-left: 115px;
-  }
-  .review__comment, .review__name {
-    font-size: 18px;
+  .attempts span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 40px;
   }
   .popup__close {
     right: -35px;

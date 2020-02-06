@@ -27,7 +27,7 @@ body
 	-webkit-tap-highlight-color: transparent
 	background-color: #eef3fa
 	background-image: url(../img/bg.png)
-	background-position: 50% 50%
+	background-position: 50% 0
 
 img
 	max-width: 100%	
@@ -81,8 +81,8 @@ select
 	overflow-x: hidden
 
 .layout
-	max-width: 530px	
-	padding: 20px 15px
+	max-width: 640px	
+	padding: 15px
 	margin: 0 auto
 	&__questions
 		margin: 30px 0
@@ -96,35 +96,60 @@ select
 /* ШАПКА */
 
 .header
-	background-color: #fff
-	border-radius: 3px
-	box-shadow: 0 15px 45px rgba(#000,.06)
-	padding: 15px
+	font-size: 0
 	text-align: center
 	&__logo
-		font-size: 25px
+		font-size: 16px
 		text-transform: uppercase
-		line-height: 1
+		line-height: 19px
 		color: #ff0054
 		font-weight: 700
 		margin: 0
+		display: inline-block
+		width: 150px
 		&::before
 			content: ''
-			width: 35px
-			height: 35px
+			width: 24px
+			height: 24px
 			background-image: url(../img/logo.jpg)
 			background-size: cover
 			background-position: 50% 50%
 			display: inline-block
 			vertical-align: middle
 			position: relative
-			top: -3px
+			top: -2px
 			margin-right: 10px
 	&__sign
-		font-size: 18px
+		font-size: 16px
 		color: #0011b7
-		margin: 5px 0 0
-		font-weight: 400
+		margin: 0
+		text-align: center
+		display: none
+		&.active
+			display: block
+	&__top
+		margin-bottom: 15px
+	&__timer
+		margin: 10px 0 !important
+
+.timer
+	font-size: 40px
+	font-weight: 700
+	color: #ff0054
+	line-height: 1
+	margin: 0
+
+.attempts
+	margin: 0
+	color: #0011B7
+	font-size: 16px
+	font-weight: 700
+	span
+		color: #FF0054
+		font-size: 20px
+		line-height: 1
+		width: 23px
+		display: inline-block
 
 /* ------- */
 
@@ -316,9 +341,12 @@ select
 	box-shadow: 0 15px 45px rgba(#000,.06)
 	&__title
 		text-align: center
-		font-size: 22px
+		font-size: 16px
 		color: #ff0054
 		margin: 0 0 20px
+	&__list
+		max-width: 425px
+		margin: 0 auto
 	&__item
 		margin-top: 25px
 
@@ -328,21 +356,20 @@ select
 	&__ava
 		float: left
 		border-radius: 50%
-		width: 50px
+		width: 65px
 	&__tail
-		margin-left: 65px
+		margin-left: 72px
 	&__comment
-		font-size: 15px
+		font-size: 16px
 		color: #0011b7
-		line-height: 1.2
+		line-height: 19px
 		margin: 0 0 8px
+		font-weight: 700 
 	&__name,
 	&__date
-		text-align: right
 		margin: 0
 		color: #9da9b5
 	&__name
-		font-size: 15px
 		font-weight: 700
 
 /* ------- */
@@ -433,27 +460,6 @@ select
 
 /* ------- */
 
-/* ЦЕНТР */
-
-.timer
-	font-size: 30px
-	font-weight: 700
-	color: #ff0054
-	line-height: 1
-	margin: 0
-	text-align: center
-
-.attempts
-	margin: 0
-	color: #ff0054
-	font-size: 15px
-	strong
-		font-size: 18px
-		display: block
-		line-height: 1
-
-/* ------- */
-
 /* КНОПКА */
 
 .btn
@@ -501,13 +507,11 @@ select
 		display: none
 	&__top
 		margin-bottom: 40px
-	&__disclamer
+	&__questions
 		font-size: 24px
 		line-height: 28px
-		margin: 0 0 40px
-	&__questions
-		font-size: 40px
-		line-height: 47px
+		color: #FF0054
+		font-weight: 700
 		&-item
 			display: none
 			visibility: hidden
@@ -522,7 +526,7 @@ select
 		background-color: #fff
 		border-radius: 3px
 		box-shadow: 0 15px 45px rgba(#000,.06)
-		padding: 40px
+		padding: 20px
 		text-align: center
 	&__progress
 	&__answers
@@ -554,8 +558,9 @@ select
 				background-color: transparent
 				text-align: center
 				background-position: 50% 50%
-				background-size: contain
+				background-size: cover
 				border: 2px solid #E5E5E5
+				box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16)
 				&:hover
 					border-color: #aaa
 					background-color: transparent
@@ -585,7 +590,8 @@ select
 		&.right
 			background-color: #2B9536
 		&.wrong,
-		&.right
+		&.right,
+		&.disabled
 			pointer-events: none
 
 .progress
@@ -593,12 +599,12 @@ select
 	line-height: 0
 	&__item
 		display: inline-block
-		width: 16px
-		height: 16px
+		width: 8px
+		height: 8px
 		animation: .2s ease both
 		background-color:#E5E5E5
 		border-radius: 50%
-		margin: 0 4px
+		margin: 0 8px
 		&.wrong,
 		&.right
 			animation-name: answersProgress
@@ -607,7 +613,8 @@ select
 		&.right
 			background-color: #2B9536
 		&.active
-			background-color: #aaa
+			background-color: #000
+			transform: scale(2)
 
 @keyframes answersProgress
 	50%

@@ -6,30 +6,30 @@
 
 @media only screen and (min-width : 590px)
 	.header
-		padding: 20px
+		text-align: left
+		&__logo,
+		&__timer,
+		&__attempts
+			display: inline-block
+			vertical-align: baseline
+		&__timer
+			text-align: center
+			width: 110px
+			margin: 0 !important
+		&__attempts
+			text-align: right
+		&__attempts,
 		&__logo
-			font-size: 32px
-			&::before
-				width: 50px
-				height: 50px
-		&__sign
-			font-size: 24px
+			width: calc(50% - 55px)
 
-	.comments
-		&__title
-			font-size: 24px
-		&__item
-			margin-top: 35px
-
-	.review
-		min-height: 100px
-		&__ava
-			width: auto
-		&__tail
-			margin-left: 115px
-		&__comment,
-		&__name
-			font-size: 18px
+	.attempts
+		position: relative
+		padding-right: 30px
+		span
+			position: absolute
+			bottom: 0
+			right: 0
+			font-size: 40px
 
 	.popup
 		&__close

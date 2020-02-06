@@ -16,13 +16,17 @@
       <section class="layout">
         <div class="layout__header"><!-- ШАПКА -->
           <header class="header">
-            <p class="header__logo">BRANDNAME</p>
-            <h1 class="header__sign">Choose a box and win a phone!</h1>
+            <div class="header__top">
+              <p class="header__logo">BRANDNAME</p>
+              <p class="header__timer timer js-timer">00:00</p>
+              <p class="header__attempts attempts">Prizes remaining:<span class="js-prizes">3</span></p>
+            </div>
+            <h1 class="header__sign active">Choose a box and win a phone!</h1>
+            <h1 class="header__sign">Ответь на несколько простых вопросов!</h1>
           </header><!-- // -->
         </div>
         <div class="layout__questions">
           <section class="questions">
-            <p class="questions__disclamer">Ответь на несколько простых вопросов!</p>
             <div class="questions__content">
               <div class="questions__top">
                 <ul class="questions__questions">
@@ -104,13 +108,6 @@
         <div class="layout__swips">
           <section class="stack"><!-- ОБЛАКО -->
             <div class="stack__cloud"> <span>Scratch</span></div><!-- // -->
-<!-- ЦЕНТРАЛЬНЫЙ БЛОК -->
-            <aside class="stack__info">
-              <div class="info">
-                <p class="timer js-timer">00:00</p>
-                <p class="attempts">Prizes remaining:<strong class="js-prizes">3</strong></p>
-              </div>
-            </aside><!-- // -->
 <!-- КАРТОЧКИ -->
             <div class="stack__pics">
               <div class="stack__pic eraser eraser--phone">
