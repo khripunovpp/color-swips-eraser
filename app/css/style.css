@@ -768,16 +768,6 @@ select {
   display: block;
 }
 
-.questions__answer {
-  width: -webkit-calc(50% - 13px);
-  width: calc(50% - 13px);
-  display: inline-block;
-}
-
-.questions__answer:nth-child(even) {
-  margin-left: 26px;
-}
-
 .questions__answer--pic {
   text-align: right;
 }
@@ -1111,5 +1101,13 @@ select {
   }
   .questions__bottom {
     padding: 20px;
+  }
+  .questions__answer {
+    width: -webkit-calc(50% - 13px);
+    width: calc(50% - 13px);
+    display: inline-block;
+  }
+  .questions__answer:nth-child(even) {
+    margin-left: 26px;
   }
 }
