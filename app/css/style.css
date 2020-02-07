@@ -717,8 +717,16 @@ select {
   text-align: center;
 }
 
-.questions__top {
+.questions__top, .questions__propgress {
   margin-bottom: 40px;
+}
+
+.questions__pics-item {
+  display: none;
+}
+
+.questions__pics-item.active {
+  display: inline-block;
 }
 
 .questions__questions {
@@ -730,20 +738,10 @@ select {
 
 .questions__questions-item {
   display: none;
-  visibility: hidden;
-  opacity: 0;
 }
 
 .questions__questions-item.active {
   display: block;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition-property: opacity, visibility;
-  -o-transition-property: opacity, visibility;
-  transition-property: opacity, visibility;
-  -webkit-transition: .2s ease-out;
-  -o-transition: .2s ease-out;
-  transition: .2s ease-out;
 }
 
 .questions__bottom {

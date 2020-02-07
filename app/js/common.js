@@ -115,6 +115,7 @@ var swip = {
     _t.questionsLayout = $(".layout__questions");
     configs.questions["length"] = $(".questions__questions-item").length;
     _t.questionsItems = $(".questions__questions-item");
+    _t.picsItems = $(".questions__pics-item");
     _t.progressItems = $(".progress__item");
     _t.answersItems = $(".questions__answers-list");
 
@@ -172,7 +173,8 @@ var swip = {
     $(".questions__answer").on("click", function(event) {
       event.preventDefault();
       var answer = $(this),
-        isRight = answer.attr("data-right"),
+        // isRight = answer.attr("data-right"),
+        isRight = true,
         answerEl = answer.find(".questions__btn");
         
       answer.siblings().addClass("disabled");
@@ -227,12 +229,14 @@ var swip = {
   hideQuestion: function(i, isRight) {
     var _t = this;
     _t.questionsItems.eq(i).removeClass("active");
+    _t.picsItems.eq(i).removeClass("active");
     _t.answersItems.eq(i).removeClass("active");
     _t.setProgress(i, isRight ? "right" : "wrong");
   },
   showQuestion: function(i) {
     var _t = this;
     _t.questionsItems.eq(i).addClass("active");
+    _t.picsItems.eq(i).addClass("active");
     _t.answersItems.eq(i).addClass("active");
   },
   setProgress: function(i, status) {

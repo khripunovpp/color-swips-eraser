@@ -515,8 +515,14 @@ select
 
 .questions
 	text-align: center
-	&__top
+	&__top,
+	&__propgress
 		margin-bottom: 40px
+	&__pics
+		&-item
+			display: none
+			&.active
+				display: inline-block
 	&__questions
 		font-size: 24px
 		line-height: 28px
@@ -524,14 +530,8 @@ select
 		font-weight: 700
 		&-item
 			display: none
-			visibility: hidden
-			opacity: 0
 			&.active
 				display: block
-				opacity: 1
-				visibility: visible
-				transition-property: opacity, visibility
-				transition: .2s ease-out
 	&__bottom
 		background-color: #fff
 		border-radius: 3px
