@@ -90,9 +90,9 @@ select
 		margin: 30px 0
 		display: none
 	&__swips
-		margin-top: 30px
-		margin-bottom: 5px
 		display: none
+		max-width: 425px
+		margin: 30px auto -30px
 	&__comments
 		margin-top: 30px
 
@@ -143,6 +143,7 @@ select
 	color: #ff0054
 	line-height: 1
 	margin: 0
+	text-align: center
 
 .attempts
 	margin: 0
@@ -267,25 +268,10 @@ select
 .card
 	padding-top: 120%
 	position: relative
-	border-radius: 3px
+	border-radius: 4px
 	color: #fff
 	background-color: currentColor
-	&::after,
-	&::before
-		content: ''
-		position: absolute
-		background-color: currentColor
-		border-radius: 0 0 3px 3px
-	&::after
-		height: 5px
-		right: 5px
-		left: 5px
-		opacity: .6
-	&::before
-		height: 10px
-		left: 10px
-		right: 10px
-		opacity: .3
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16)
 	&.disable
 		filter: grayscale(1)
 
@@ -389,7 +375,7 @@ select
 	width: 100%
 	height: 100%
 	overflow: auto
-	background-color: rgba(#a0a3a8, .5)
+	background-color: rgba(#000, .64)
 	display: none
 	&.showed
 		.popup
@@ -415,10 +401,10 @@ select
 		max-width: 500px
 		margin: 0 auto
 		background-color: #fff
-		box-shadow: 0 15px 45px rgba(#000,.06)
-		border-radius: 3px
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16)
+		border-radius: 8px
 		position: relative
-		padding: 30px 15px
+		padding: 40px
 		transform: translateY(-50px)
 		opacity: 0
 		visibility: hidden
@@ -444,15 +430,11 @@ select
 		cursor: pointer
 		&:hover
 			background-size: 15px
-	&__text,
-	&__rules
+	&__text
 		font-size: 18px
 		color: #0011b7
 		line-height: 1.2
 		text-align: center
-	&__rules
-		font-weight: 700
-		line-height: 1.4
 	&__pic
 		margin: 0 auto 20px
 		display: block
@@ -460,8 +442,42 @@ select
 	&__title
 		margin: 0 0 20px
 		text-align: center
-		font-size: 24px
+		font-size: 16px
+		line-height: 19px
 		color: #ff0054
+
+.rules
+	&__item
+		position: relative
+		font-size: 0
+		color: #0011B7
+		min-height: 80px
+		&::before
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			width: 80px
+			height: 80px
+			margin-right: 25px
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: 50% 50%
+		&--1::before
+			background-image: url(../img/rules-pic-1.png)
+		&--2::before
+			background-image: url(../img/rules-pic-2.png)
+		&--3::before
+			background-image: url(../img/prize.png)
+		&+&
+			margin-top: 25px
+		p
+			margin: 0
+			display: inline-block
+			vertical-align: middle
+			width: calc(100% - 105px)
+			font-size: 16px
+			line-height: 19px
+
 
 /* ------- */
 
@@ -483,6 +499,8 @@ select
 	border: none
 	padding: 15px 30px
 	min-width: 200px
+	max-width: 300px
+	text-align: center
 	transition: all .2s
 	&:hover
 		opacity: 0.8
@@ -518,7 +536,7 @@ select
 		background-color: #fff
 		border-radius: 3px
 		box-shadow: 0 15px 45px rgba(#000,.06)
-		padding: 20px
+		padding: 20px 10px
 		text-align: center
 	&__progress
 	&__answers
@@ -719,6 +737,15 @@ select
 	cursor: none !important
 	pointer-events: none
 	display: none
+
+/* ------- */
+
+/* КАРТОЧКИ */
+
+.footer
+	color: #9DA9B5
+	text-align: center
+	padding: 15px
 
 /* ------- */
 

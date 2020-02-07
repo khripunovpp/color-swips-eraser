@@ -93,7 +93,7 @@ var swip = {
     prizesCount: 3,
     currentAttempt: 0,
     currentCardIndex: 0,
-    timer: 5,
+    timer: 8,
     questions: {
       currentStep: 1,
       right: 0,
@@ -125,6 +125,9 @@ var swip = {
     _t.resultsLayout = $(".layout__results");
     _t.cardsLayout = $(".layout__swips");
 
+    _t.rightAnswersEl = $('.js-rightAnswers');
+    _t.totalAnswersEl = $('.js-totalAnswers');
+
     _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
     _t.openPopup("#popupStart");
@@ -142,6 +145,7 @@ var swip = {
       event.preventDefault();
       _t.closePopup("#popupStart", function() {
         _t.start();
+        _t.timerInit();
       });
     });
 
@@ -154,7 +158,6 @@ var swip = {
           .siblings()
           .removeClass("active");
         _t.secondStep();
-        _t.timerInit();
         _t.counter();
       });
     });
@@ -238,12 +241,17 @@ var swip = {
     _t.progressItems.eq(i + 1).addClass("active");
   },
   counting: function() {
-    var _t = this;
+    var _t = this,
+    configs = _t.config;
+
     setTimeout(function() {
       _t.questionsLayout.hide(0, counting);
     }, 400);
 
-    var interval = 50,
+    _t.rightAnswersEl.text(configs.questions.right);
+    _t.totalAnswersEl.text(configs.questions.length);
+
+    var interval = 60,
       items = $(".counting__item"),
       percentageEl = $(".loader__percentage"),
       loaderTrack = $(".loader__completeProgress"),
@@ -252,8 +260,6 @@ var swip = {
 
     function counting() {
       _t.countingLayout.show(0);
-
-      console.log(timePerItem);
 
       items.each(function(i) {
         setTimeout(function() {
@@ -335,8 +341,7 @@ var swip = {
       $(el).css({
         color: color1,
         backgroundImage:
-          "linear-gradient(-45deg, " + color1 + ", " + color2 + ")",
-        boxShadow: "0 15px 45px rgba(" + Util.hexToRgb(color1) + ",.25)"
+          "linear-gradient(-45deg, " + color1 + ", " + color2 + ")"
       });
       _t.erasers
         .eq(index)
@@ -371,8 +376,7 @@ var swip = {
               .index();
             _t.disableErasers.call(_t);
           },
-          completeRatio:
-            configs.currentAttempt >= configs.winnerAttempt ? 0.5 : 0.25,
+          completeRatio: 0.5,
           completeFunction: _t.results.bind(_t)
         });
     });

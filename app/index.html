@@ -11,14 +11,13 @@
     <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
   </head>
   <body>
-    <div class="w-page"><!-- КУРСОР -->
-<!-- // -->
+    <div class="w-page"><!-- КУРСОР --><img src="img/cursor.png" alt="" id="cursor"><!-- // -->
       <section class="layout">
         <div class="layout__header"><!-- ШАПКА -->
           <header class="header">
             <div class="header__top">
               <p class="header__logo">BRANDNAME</p>
-              <p class="header__timer timer js-timer">00:00</p>
+              <p class="header__timer timer js-timer">08:00</p>
               <p class="header__attempts attempts">Prizes remaining:<span class="js-prizes">3</span></p>
             </div>
             <h1 class="header__sign active">Ответь на несколько простых вопросов!</h1>
@@ -46,58 +45,58 @@
                 <div class="questions__answers">
                   <ul class="questions__answers-list active">
                     <li class="questions__answer questions__answer--pic" data-right="true">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-1-1.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-1-2.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-1-3.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-1-4.jpg)"></button>
                     </li>
                   </ul>
                   <ul class="questions__answers-list">
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-2-1.jpg)"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn" style="background-image: url(img/pic-2-2.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic" data-right="true">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-2-3.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
-                    </li>
-                    <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-2-4.jpg)"></button>
                     </li>
                   </ul>
                   <ul class="questions__answers-list">
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-3-1.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-3-2.jpg)"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn" style="background-image: url(img/pic-3-3.jpg)"></button>
                     </li>
                     <li class="questions__answer questions__answer--pic" data-right="true">
-                      <button class="questions__btn"></button>
-                    </li>
-                    <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-3-4.jpg)"></button>
                     </li>
                   </ul>
                   <ul class="questions__answers-list">
-                    <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
-                    </li>
-                    <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
-                    </li>
-                    <li class="questions__answer questions__answer--pic">
-                      <button class="questions__btn"></button>
-                    </li>
                     <li class="questions__answer questions__answer--pic" data-right="true">
-                      <button class="questions__btn"></button>
+                      <button class="questions__btn" style="background-image: url(img/pic-4-1.jpg)"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn" style="background-image: url(img/pic-4-2.jpg)"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn" style="background-image: url(img/pic-4-3.jpg)"></button>
+                    </li>
+                    <li class="questions__answer questions__answer--pic">
+                      <button class="questions__btn" style="background-image: url(img/pic-4-4.jpg)"></button>
                     </li>
                   </ul>
                 </div>
@@ -112,7 +111,7 @@
               <div class="loader__progress"><span class="loader__completeProgress"></span></div>
             </div>
             <ul class="counting__list">
-              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur (<span class="js-rightAnswers">4</span>/<span class="js-totalAnswers">4</span>)!</li>
+              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur (<span class="js-rightAnswers">0</span>/<span class="js-totalAnswers">0</span>)!</li>
               <li class="counting__item">Lorem ipsum dolor sit amet, consectetur!</li>
               <li class="counting__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?</li>
             </ul>
@@ -238,7 +237,9 @@
             </ul>
           </section><!-- // -->
         </div>
-      </section><!-- ПОПАП ВЫИГРЫША -->
+      </section><!-- ФУТЕР -->
+      <footer class="footer"><span class="ryear"></span>, © Copyright</footer><!-- // -->
+<!-- ПОПАП ВЫИГРЫША -->
       <aside class="popup" id="popupWin">
         <table class="popup__overlay">
           <tr>
@@ -259,11 +260,18 @@
         <table class="popup__overlay">
           <tr>
             <td class="popup__wrapper">
-              <div class="popup__panel"><img class="popup__pic" src="img/rules.png" alt="">
-                <ul class="popup__rules">
-                  <li>1. See what square the prize is hidden in.</li>
-                  <li>2. Scratch off the coating and get the prize!</li>
-                  <li>You have just 3 attempts!</li>
+              <div class="popup__panel">
+                <h2 class="popup__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</h2>
+                <ul class="popup__rules rules">
+                  <li class="rules__item rules__item--1">
+                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                  </li>
+                  <li class="rules__item rules__item--2">
+                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                  </li>
+                  <li class="rules__item rules__item--3">
+                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                  </li>
                 </ul>
                 <button class="popup__btn btn js-start">Start!</button>
               </div>
