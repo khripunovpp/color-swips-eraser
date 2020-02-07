@@ -95,7 +95,9 @@ var swip = {
     currentCardIndex: 0,
     timer: 5,
     questions: {
-      currentStep: 1
+      currentStep: 1,
+      right: 0,
+      wrong: 0
     }
   },
   init: function(options) {
@@ -109,11 +111,23 @@ var swip = {
 
     _t.timerStep = 0;
 
+    _t.questionsSection = $(".questions");
+    _t.questionsLayout = $(".layout__questions");
+    configs.questions["length"] = $(".questions__questions-item").length;
+    _t.questionsItems = $(".questions__questions-item");
+    _t.progressItems = $(".progress__item");
+    _t.answersItems = $(".questions__answers-list");
+
+    var right = "right",
+      wrong = "wrong";
+
+    _t.countingLayout = $(".layout__counting");
+    _t.resultsLayout = $(".layout__results");
+    _t.cardsLayout = $(".layout__swips");
+
     _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
-    // _t.openPopup("#popupStart");
-
-    _t.firstStep();
+    _t.openPopup("#popupStart");
 
     $(".popup__close").on("click", function(event) {
       event.preventDefault();
@@ -126,13 +140,22 @@ var swip = {
 
     $(".js-start").on("click", function(event) {
       event.preventDefault();
-      // _t.closePopup('#popupStart', function() {
-      //     _t.start();
-      //     _t.timerInit();
-      //     _t.counter();
-      // })
       _t.closePopup("#popupStart", function() {
         _t.start();
+      });
+    });
+
+    $(".js-startSecondStep").on("click", function(event) {
+      event.preventDefault();
+      _t.resultsLayout.hide(0, function() {
+        $(".header__sign")
+          .eq(1)
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+        _t.secondStep();
+        _t.timerInit();
+        _t.counter();
       });
     });
 
@@ -143,13 +166,6 @@ var swip = {
       });
     });
 
-    _t.questionsSection = $(".questions");
-    _t.questionsContent = $(".questions__content");
-    configs.questions["length"] = $(".questions__questions-item").length;
-    _t.questionsItems = $(".questions__questions-item");
-    _t.progressItems = $(".progress__item");
-    _t.answersItems = $(".questions__answers-list");
-
     $(".questions__answer").on("click", function(event) {
       event.preventDefault();
       var answer = $(this),
@@ -157,7 +173,13 @@ var swip = {
         answerEl = answer.find(".questions__btn");
       answer.siblings().addClass("disabled");
 
-      isRight ? answerEl.addClass("right") : answerEl.addClass("wrong");
+      if (isRight) {
+        answerEl.addClass(right);
+        configs.questions[right]++;
+      } else {
+        answerEl.addClass(wrong);
+        configs.questions[wrong]++;
+      }
 
       setTimeout(function() {
         _t.nextQuestion(isRight);
@@ -190,16 +212,19 @@ var swip = {
       _t.hideQuestion(configs.questions.currentStep - 1, isRight);
       configs.questions.currentStep++;
       _t.showQuestion(configs.questions.currentStep - 1);
-    } else  {
-      _t.setProgress(configs.questions.currentStep-1, isRight ? 'right' : 'wrong');
-      _t.counting()
-    };
+    } else {
+      _t.setProgress(
+        configs.questions.currentStep - 1,
+        isRight ? "right" : "wrong"
+      );
+      _t.counting();
+    }
   },
   hideQuestion: function(i, isRight) {
     var _t = this;
     _t.questionsItems.eq(i).removeClass("active");
     _t.answersItems.eq(i).removeClass("active");
-    _t.setProgress(i, isRight ? 'right' : 'wrong')
+    _t.setProgress(i, isRight ? "right" : "wrong");
   },
   showQuestion: function(i) {
     var _t = this;
@@ -208,27 +233,67 @@ var swip = {
   },
   setProgress: function(i, status) {
     var _t = this;
-    _t.progressItems.siblings().removeClass('active');
-    _t.progressItems.eq(i).addClass(status)
-    _t.progressItems.eq(i+1).addClass('active')
+    _t.progressItems.siblings().removeClass("active");
+    _t.progressItems.eq(i).addClass(status);
+    _t.progressItems.eq(i + 1).addClass("active");
   },
   counting: function() {
     var _t = this;
     setTimeout(function() {
-      _t.questionsSection.slideUp(400, function() {});
+      _t.questionsLayout.hide(0, counting);
     }, 400);
+
+    var interval = 50,
+      items = $(".counting__item"),
+      percentageEl = $(".loader__percentage"),
+      loaderTrack = $(".loader__completeProgress"),
+      totalTime = interval * 100,
+      timePerItem = Math.ceil(totalTime / items.length);
+
+    function counting() {
+      _t.countingLayout.show(0);
+
+      console.log(timePerItem);
+
+      items.each(function(i) {
+        setTimeout(function() {
+          items.eq(i).addClass("active");
+        }, (i + 1) * timePerItem);
+      });
+
+      var loading = 0,
+        loadingTimer;
+
+      loadingTimer = setInterval(function() {
+        loading++;
+        percentageEl.text(loading + "%");
+        loaderTrack.css("width", loading + "%");
+        if (loading >= 100) {
+          clearInterval(loadingTimer);
+        }
+      }, interval);
+
+      setTimeout(function() {
+        _t.showResults();
+      }, totalTime + 1000);
+    }
+  },
+  showResults: function() {
+    var _t = this;
+
+    _t.countingLayout.hide(0);
+    _t.resultsLayout.show(0);
   },
   firstStep: function() {
     var _t = this;
 
-    setTimeout(function() {
-      _t.questionsContent.slideDown(500);
-      Util.scrollToEl($(".layout__questions"));
-    }, 300);
+    _t.questionsLayout.show(0);
   },
   secondStep: function() {
     var _t = this,
       configs = _t.config;
+
+    _t.cardsLayout.show(0);
 
     _t.cards
       .add(_t.erasers)

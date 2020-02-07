@@ -84,12 +84,17 @@ select
 	max-width: 640px	
 	padding: 15px
 	margin: 0 auto
-	&__questions
+	&__questions,
+	&__counting,
+	&__results
 		margin: 30px 0
+		display: none
 	&__swips
 		margin-top: 30px
 		margin-bottom: 5px
 		display: none
+	&__comments
+		margin-top: 30px
 
 /* ------- */
 
@@ -469,33 +474,22 @@ select
 	line-height: 1
 	background-color: #ffa857
 	background-image: linear-gradient(to right, #ffa857, #fe5a73)
-	border-radius: 3px
-	box-shadow: inset 0 -4px 0 rgba(#fff,.33), 0 -15px 25px rgba(#000, .15)
+	border-radius: 50px
+	box-shadow: 0px 4px 8px rgba(254, 127, 101, 0.4)
 	cursor: pointer
-	display: table
+	display: block
 	margin: 25px auto
 	text-decoration: none
 	border: none
-	padding: 0
-	&__sign
-		padding: 15px 30px
-		display: inline-block
-	&__icon
-		display: inline-block
-		vertical-align: middle
-		background-image: url(../img/arrow-icon.png)
-		background-size: auto 12px
-		background-repeat: no-repeat
-		background-position: 50% 50%
-		padding: 0 30px
-		width: 55px
-		height: 15px
-		border-left: 2px solid rgba(#fff,.33)
+	padding: 15px 30px
+	min-width: 200px
+	transition: all .2s
 	&:hover
-		box-shadow: inset 0 4px 0 rgba(#000,.15), 0 0 0 rgba(#000, .15)
-		.btn
-			&__icon
-				background-position: 60% 50%
+		opacity: 0.8
+		box-shadow: 0px 2px 4px rgba(254, 127, 101, 0.4)
+	&:active
+		opacity: 1
+		box-shadow: 0px 2px 4px rgba(254, 127, 101, 0.4), inset 0px 2px 2px rgba(0, 0, 0, 0.16)
 
 /* ------- */
 
@@ -503,8 +497,6 @@ select
 
 .questions
 	text-align: center
-	&__content
-		display: none
 	&__top
 		margin-bottom: 40px
 	&__questions
@@ -621,7 +613,99 @@ select
 		transform: scale(1.5)
 	0%,100%
 		transform: scale(1)
-		
+
+
+/* ------- */
+
+/* ПОДСЧЕТ СТАТЫ */
+
+.counting
+	&__loader
+		max-width: 530px
+		margin: 0 auto 40px
+	&__list
+		background-color: #fff
+		border-radius: 3px
+		box-shadow: 0 15px 45px rgba(#000,.06)
+		padding: 40px
+	&__item
+		padding-left: 32px
+		position: relative
+		color: #0011B7
+		font-size: 24px
+		line-height: 28px
+		&+&
+			margin-top: 34px
+		&::before
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			width: 16px
+			height: 16px
+			background-size: cover
+			background-image: url(../img/loading.gif)
+		&.active::before
+			background-image: url(../img/check-icon.png)
+
+.loader
+	&__status
+		color: #FF0054
+		font-size: 24px
+		line-height: 28px
+		position: relative
+		padding-right: 100px
+		font-weight: 700
+		margin: 0 0 15px
+	&__percentage
+		position: absolute
+		top: 0
+		right: 0
+		width: 80px
+		text-align: right
+	&__progress
+		height: 8px
+		border-radius: 4px
+		background-color: #C4C4C4
+		position: relative
+		overflow: hidden
+	&__completeProgress
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 4px
+		background-color: #2B9536
+		width: 0
+		transition: width .1s linear
+
+/* ------- */
+
+/* РЕЗУЛЬТАТЫ */
+
+.results
+	text-align: center
+	&__title
+		color: #FF0054
+		font-size: 40px
+		line-height: 47px
+		font-weight: 700
+		margin: 0 0 40px
+	&__pic
+		margin-bottom: 8px
+		display: inline-block
+	&__text
+		color: #0011B7
+		font-size: 16px
+		line-height: 19px
+	&__box
+		background-color: #fff
+		border-radius: 3px
+		box-shadow: 0 15px 45px rgba(#000,.06)
+		padding: 30px
+	&__btn
+		margin-bottom: 0
 
 
 /* ------- */

@@ -21,11 +21,11 @@
               <p class="header__timer timer js-timer">00:00</p>
               <p class="header__attempts attempts">Prizes remaining:<span class="js-prizes">3</span></p>
             </div>
-            <h1 class="header__sign active">Choose a box and win a phone!</h1>
-            <h1 class="header__sign">Ответь на несколько простых вопросов!</h1>
+            <h1 class="header__sign active">Ответь на несколько простых вопросов!</h1>
+            <h1 class="header__sign">Choose a box and win a phone!</h1>
           </header><!-- // -->
         </div>
-        <div class="layout__questions">
+        <div class="layout__questions"><!-- ВОПРОСЫ -->
           <section class="questions">
             <div class="questions__content">
               <div class="questions__top">
@@ -103,7 +103,29 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section><!-- // -->
+        </div>
+        <div class="layout__counting"><!-- ПОДСЧЕТ СТАТЫ -->
+          <section class="counting">
+            <div class="counting__loader loader">
+              <p class="loader__status">Проверяем ваши ответы...<span class="loader__percentage">0%</span></p>
+              <div class="loader__progress"><span class="loader__completeProgress"></span></div>
+            </div>
+            <ul class="counting__list">
+              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur (<span class="js-rightAnswers">4</span>/<span class="js-totalAnswers">4</span>)!</li>
+              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur!</li>
+              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?</li>
+            </ul>
+          </section><!-- // -->
+        </div>
+        <div class="layout__results"><!-- РУЗЛЬТАТЫ ОПРОСА -->
+          <section class="results">
+            <p class="results__title">Вы отлично ответили на все вопросы!</p>
+            <div class="results__box"><img class="results__pic" src="img/scratch-pic.png" alt="">
+              <p class="results__text">Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
+              <button class="results__btn btn js-startSecondStep">Начать играть!</button>
+            </div>
+          </section><!-- // -->
         </div>
         <div class="layout__swips">
           <section class="stack"><!-- ОБЛАКО -->
@@ -225,7 +247,7 @@
                 <h2 class="popup__title">Congratulations, you’re a winner!</h2><img class="popup__pic" src="img/prize.png" alt="">
                 <div class="popup__timer">
                   <p class="timer js-timer">00:00</p>
-                </div><a class="popup__btn btn" href=""><span class="btn__sign">Get a prize</span><span class="btn__icon"></span></a>
+                </div><a class="popup__btn btn" href="">Get a prize</a>
                 <p class="popup__text">Please provide your contacts to get a prize. <br>Hurry up.</p>
               </div>
             </td>
@@ -243,7 +265,7 @@
                   <li>2. Scratch off the coating and get the prize!</li>
                   <li>You have just 3 attempts!</li>
                 </ul>
-                <button class="popup__btn btn js-start"><span class="btn__sign">Start!</span><span class="btn__icon"></span></button>
+                <button class="popup__btn btn js-start">Start!</button>
               </div>
             </td>
           </tr>
@@ -257,7 +279,7 @@
               <div class="popup__panel">
                 <h2 class="popup__title">Be attentive!</h2><img class="popup__pic" src="img/loose.gif" alt="">
                 <p class="popup__text">You have 2 more attempts</p>
-                <button class="popup__btn btn js-restart"><span class="btn__sign">Continue</span><span class="btn__icon"></span></button>
+                <button class="popup__btn btn js-restart">Continue</button>
               </div>
             </td>
           </tr>

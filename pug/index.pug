@@ -25,10 +25,11 @@ html
 							p.header__timer.timer.js-timer 00:00
 							p.header__attempts.attempts Prizes remaining:
 								span.js-prizes 3
-						h1.header__sign.active Choose a box and win a phone!
-						h1.header__sign Ответь на несколько простых вопросов!
+						h1.header__sign.active Ответь на несколько простых вопросов!
+						h1.header__sign Choose a box and win a phone!
 					<!-- // -->
 				.layout__questions
+					<!-- ВОПРОСЫ -->
 					section.questions
 						.questions__content
 							.questions__top
@@ -80,7 +81,29 @@ html
 											button.questions__btn
 										li.questions__answer(data-right="true").questions__answer--pic
 											button.questions__btn
-							
+					<!-- // -->
+				.layout__counting
+					<!-- ПОДСЧЕТ СТАТЫ -->
+					section.counting
+						.counting__loader.loader
+							p.loader__status Проверяем ваши ответы...
+								span.loader__percentage 0%
+							.loader__progress
+								span.loader__completeProgress
+						ul.counting__list
+							li.counting__item Lorem ipsum dolor sit amet, consectetur (#[span.js-rightAnswers 4]/#[span.js-totalAnswers 4])!
+							li.counting__item Lorem ipsum dolor sit amet, consectetur!
+							li.counting__item Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?
+					<!-- // -->
+				.layout__results
+					<!-- РУЗЛЬТАТЫ ОПРОСА -->
+					section.results
+						p.results__title Вы отлично ответили на все вопросы!
+						.results__box
+							img.results__pic(src="img/scratch-pic.png", alt="")
+							p.results__text Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+							button.results__btn.btn.js-startSecondStep Начать играть!
+					<!-- // -->
 				.layout__swips
 					section.stack
 						<!-- ОБЛАКО -->
@@ -187,9 +210,7 @@ html
 								img.popup__pic(src="img/prize.png", alt="")
 								.popup__timer
 									p.timer.js-timer 00:00
-								a.popup__btn.btn(href="")
-									span.btn__sign Get a prize
-									span.btn__icon
+								a.popup__btn.btn(href="") Get a prize
 								p.popup__text Please provide your contacts to get a prize. #[br]Hurry up.
 			<!-- // -->
 			<!-- ПОПАП СТАРТА -->
@@ -203,9 +224,7 @@ html
 									li 1. See what square the prize is hidden in.
 									li 2. Scratch off the coating and get the prize!
 									li You have just 3 attempts!
-								button.popup__btn.btn.js-start
-									span.btn__sign Start!
-									span.btn__icon
+								button.popup__btn.btn.js-start Start!
 			<!-- // -->
 			<!-- ПОПАП ПРОИГРЫША -->
 			aside.popup#popupLoose
@@ -216,9 +235,7 @@ html
 								h2.popup__title Be attentive!
 								img.popup__pic(src="img/loose.gif", alt="")
 								p.popup__text You have 2 more attempts
-								button.popup__btn.btn.js-restart
-									span.btn__sign Continue
-									span.btn__icon
+								button.popup__btn.btn.js-restart Continue
 			<!-- // -->
 		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН -->
 		script(src="js/jquery.eraser.CUSTOMIZED.js")
