@@ -174,6 +174,7 @@ var swip = {
       var answer = $(this),
         isRight = answer.attr("data-right"),
         answerEl = answer.find(".questions__btn");
+        
       answer.siblings().addClass("disabled");
 
       if (isRight) {
@@ -376,7 +377,7 @@ var swip = {
               .index();
             _t.disableErasers.call(_t);
           },
-          completeRatio: 0.5,
+          completeRatio: configs.currentAttempt >= configs.winnerAttempt ? .5 : .35,
           completeFunction: _t.results.bind(_t)
         });
     });
