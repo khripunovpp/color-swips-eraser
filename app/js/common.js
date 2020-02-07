@@ -172,7 +172,8 @@ var swip = {
     $(".questions__answer").on("click", function(event) {
       event.preventDefault();
       var answer = $(this),
-        isRight = answer.attr("data-right"),
+        // isRight = answer.attr("data-right"),
+        isRight = true,
         answerEl = answer.find(".questions__btn");
         
       answer.siblings().addClass("disabled");
