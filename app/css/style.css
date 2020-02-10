@@ -630,7 +630,7 @@ select {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   position: relative;
-  padding: 40px;
+  padding: 25px;
   -webkit-transform: translateY(-50px);
   -ms-transform: translateY(-50px);
   transform: translateY(-50px);
@@ -694,16 +694,15 @@ select {
   position: relative;
   font-size: 0;
   color: #0011B7;
-  min-height: 80px;
 }
 
 .rules__item::before {
   content: '';
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
+  margin: 0 auto;
   width: 80px;
   height: 80px;
-  margin-right: 25px;
+  margin-bottom: 25px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -727,10 +726,6 @@ select {
 
 .rules__item p {
   margin: 0;
-  display: inline-block;
-  vertical-align: middle;
-  width: -webkit-calc(100% - 105px);
-  width: calc(100% - 105px);
   font-size: 16px;
   line-height: 19px;
 }
@@ -973,19 +968,19 @@ select {
   border-radius: 3px;
   -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  padding: 40px;
+  padding: 25px;
 }
 
 .counting__item {
   padding-left: 32px;
   position: relative;
   color: #0011B7;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 21px;
+  line-height: 26px;
 }
 
 .counting__item + .counting__item {
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .counting__item::before {
@@ -999,13 +994,29 @@ select {
   background-image: url(../img/loading.gif);
 }
 
+.counting__item strong {
+  font-size: 15px;
+  text-align: right;
+  color: #ff0054;
+  display: none;
+  padding-top: 10px;
+}
+
+.counting__item p {
+  margin: 0;
+}
+
 .counting__item.active::before {
   background-image: url(../img/check-icon.png);
 }
 
+.counting__item.active strong {
+  display: block;
+}
+
 .loader__status {
   color: #FF0054;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 28px;
   position: relative;
   padding-right: 100px;
@@ -1145,6 +1156,9 @@ select {
   .popup__pic {
     max-width: none;
   }
+  .popup__panel {
+    padding: 40px;
+  }
   .stack {
     cursor: default;
   }
@@ -1168,6 +1182,9 @@ select {
   .attempts strong {
     font-size: 24px;
   }
+  .loader__status {
+    font-size: 24px;
+  }
   .questions__bottom {
     padding: 20px;
   }
@@ -1184,5 +1201,33 @@ select {
   }
   .questions__btn {
     margin-bottom: 26px;
+  }
+  .rules__item {
+    min-height: 80px;
+  }
+  .rules__item::before {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+  .rules__item p {
+    display: inline-block;
+    vertical-align: middle;
+    width: -webkit-calc(100% - 105px);
+    width: calc(100% - 105px);
+  }
+  .counting__list {
+    padding: 40px;
+  }
+  .counting__item {
+    padding-right: 150px;
+  }
+  .counting__item strong {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    padding-top: 0;
   }
 }

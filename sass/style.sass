@@ -440,7 +440,7 @@ select
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16)
 		border-radius: 8px
 		position: relative
-		padding: 40px
+		padding: 25px
 		transform: translateY(-50px)
 		opacity: 0
 		visibility: hidden
@@ -487,14 +487,13 @@ select
 		position: relative
 		font-size: 0
 		color: #0011B7
-		min-height: 80px
 		&::before
 			content: ''
-			display: inline-block
-			vertical-align: middle
+			display: block
+			margin: 0 auto
 			width: 80px
 			height: 80px
-			margin-right: 25px
+			margin-bottom: 25px
 			background-size: contain
 			background-repeat: no-repeat
 			background-position: 50% 50%
@@ -508,9 +507,6 @@ select
 			margin-top: 25px
 		p
 			margin: 0
-			display: inline-block
-			vertical-align: middle
-			width: calc(100% - 105px)
 			font-size: 16px
 			line-height: 19px
 
@@ -678,15 +674,15 @@ select
 		background-color: #fff
 		border-radius: 3px
 		box-shadow: 0 15px 45px rgba(#000,.06)
-		padding: 40px
+		padding: 25px
 	&__item
 		padding-left: 32px
 		position: relative
 		color: #0011B7
-		font-size: 24px
-		line-height: 28px
+		font-size: 21px
+		line-height: 26px
 		&+&
-			margin-top: 34px
+			margin-top: 28px
 		&::before
 			content: ''
 			position: absolute
@@ -696,13 +692,24 @@ select
 			height: 16px
 			background-size: cover
 			background-image: url(../img/loading.gif)
-		&.active::before
-			background-image: url(../img/check-icon.png)
+		strong
+			font-size: 15px
+			text-align: right
+			color: #ff0054
+			display: none
+			padding-top: 10px
+		p
+			margin: 0
+		&.active
+			&::before
+				background-image: url(../img/check-icon.png)
+			strong
+				display: block
 
 .loader
 	&__status
 		color: #FF0054
-		font-size: 24px
+		font-size: 20px
 		line-height: 28px
 		position: relative
 		padding-right: 100px

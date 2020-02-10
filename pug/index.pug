@@ -110,14 +110,21 @@ html
 					<!-- ПОДСЧЕТ СТАТЫ -->
 					section.counting
 						.counting__loader.loader
-							p.loader__status Проверяем ваши ответы...
-								span.loader__percentage 0%
+							p.loader__status 
+								span Проверяем ваши ответы...
+								strong.loader__percentage 0%
 							.loader__progress
 								span.loader__completeProgress
 						ul.counting__list
-							li.counting__item Lorem ipsum dolor sit amet, consectetur (#[span.js-rightAnswers 0]/#[span.js-totalAnswers 0])!
-							li.counting__item Lorem ipsum dolor sit amet, consectetur!
-							li.counting__item Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?
+							li.counting__item 
+								p Проверяем ваши ответы
+								strong (#[span.js-rightAnswers 0]/#[span.js-totalAnswers 0])
+							li.counting__item 
+								p Проверяем IP на дубликаты
+								strong Не обнаружено
+							li.counting__item 
+								p Проверяем наличие призов
+								strong Есть в наличии
 					<!-- // -->
 
 				.layout__results
@@ -127,7 +134,7 @@ html
 						p.results__title Вы отлично ответили на все вопросы!
 						.results__box
 							img.results__pic(src="img/scratch-pic.png", alt="")
-							p.results__text Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+							p.results__text Остался всего 1 шаг до приза! Сотри защитный слой и выиграй его! У тебя всего 3 попытки!
 							button.results__btn.btn.js-startSecondStep Начать играть!
 					<!-- // -->
 
@@ -260,11 +267,11 @@ html
 					tr
 						td.popup__wrapper
 							.popup__panel
-								h2.popup__title Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.
+								h2.popup__title Congratulations! You were chosen to win (5) prize! Follow the guide below:
 								ul.popup__rules.rules
-									li.rules__item.rules__item--1 #[p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
-									li.rules__item.rules__item--2 #[p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
-									li.rules__item.rules__item--3 #[p 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
+									li.rules__item.rules__item--1 #[p 1. Answer the quiz questions.]
+									li.rules__item.rules__item--2 #[p 2. Try Your luck and scratch 1 of 4 coloured squares.]
+									li.rules__item.rules__item--3 #[p 3. Не забудь оставить свои контакты для получения приза!]
 								button.popup__btn.btn.js-start Start!
 			<!-- // -->
 			

@@ -208,8 +208,8 @@ var swip = {
   start: function() {
     var _t = this;
 
-    // _t.firstStep();
-    _t.secondStep();
+    _t.firstStep();
+    // _t.secondStep();
   },
   nextQuestion: function(isRight) {
     var _t = this,
@@ -262,13 +262,21 @@ var swip = {
       percentageEl = $(".loader__percentage"),
       loaderTrack = $(".loader__completeProgress"),
       totalTime = interval * 100,
-      timePerItem = Math.ceil(totalTime / items.length);
+      timePerItem = Math.ceil(totalTime / items.length),
+      checkingRule = $(".loader__status span"),
+      lastRuleText = "";
 
     function counting() {
       _t.countingLayout.show(0);
 
       items.each(function(i) {
         setTimeout(function() {
+          lastRuleText =
+            items
+              .eq(i + 1)
+              .find("p")
+              .text() || lastRuleText;
+          checkingRule.text(lastRuleText + "...");
           items.eq(i).addClass("active");
         }, (i + 1) * timePerItem);
       });
@@ -329,7 +337,6 @@ var swip = {
             );
 
             _t.stack.addClass("e-mixing");
-
 
             _t.cards.each(function(i, el) {
               $(el).css({

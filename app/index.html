@@ -124,13 +124,19 @@
         <div class="layout__counting"><!-- ПОДСЧЕТ СТАТЫ -->
           <section class="counting">
             <div class="counting__loader loader">
-              <p class="loader__status">Проверяем ваши ответы...<span class="loader__percentage">0%</span></p>
+              <p class="loader__status"> <span>Проверяем ваши ответы...</span><strong class="loader__percentage">0%</strong></p>
               <div class="loader__progress"><span class="loader__completeProgress"></span></div>
             </div>
             <ul class="counting__list">
-              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur (<span class="js-rightAnswers">0</span>/<span class="js-totalAnswers">0</span>)!</li>
-              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur!</li>
-              <li class="counting__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?</li>
+              <li class="counting__item"> 
+                <p>Проверяем ваши ответы</p><strong>(<span class="js-rightAnswers">0</span>/<span class="js-totalAnswers">0</span>)</strong>
+              </li>
+              <li class="counting__item"> 
+                <p>Проверяем IP на дубликаты</p><strong>Не обнаружено</strong>
+              </li>
+              <li class="counting__item"> 
+                <p>Проверяем наличие призов</p><strong>Есть в наличии</strong>
+              </li>
             </ul>
           </section><!-- // -->
         </div>
@@ -138,7 +144,7 @@
           <section class="results">
             <p class="results__title">Вы отлично ответили на все вопросы!</p>
             <div class="results__box"><img class="results__pic" src="img/scratch-pic.png" alt="">
-              <p class="results__text">Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
+              <p class="results__text">Остался всего 1 шаг до приза! Сотри защитный слой и выиграй его! У тебя всего 3 попытки!</p>
               <button class="results__btn btn js-startSecondStep">Начать играть!</button>
             </div>
           </section><!-- // -->
@@ -279,16 +285,16 @@
           <tr>
             <td class="popup__wrapper">
               <div class="popup__panel">
-                <h2 class="popup__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</h2>
+                <h2 class="popup__title">Congratulations! You were chosen to win (5) prize! Follow the guide below:</h2>
                 <ul class="popup__rules rules">
                   <li class="rules__item rules__item--1">
-                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                    <p>1. Answer the quiz questions.</p>
                   </li>
                   <li class="rules__item rules__item--2">
-                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                    <p>2. Try Your luck and scratch 1 of 4 coloured squares.</p>
                   </li>
                   <li class="rules__item rules__item--3">
-                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.</p>
+                    <p>3. Не забудь оставить свои контакты для получения приза!</p>
                   </li>
                 </ul>
                 <button class="popup__btn btn js-start">Start!</button>
