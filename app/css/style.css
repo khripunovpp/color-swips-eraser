@@ -213,6 +213,22 @@ select {
   cursor: none !important;
 }
 
+.stack__gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -55px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: opacity .2s ease;
+  -ms-transform: opacity .2s ease;
+  transform: opacity .2s ease;
+  border-radius: 50px;
+}
+
 .stack__cloud {
   color: #FE0154;
   font-weight: 700;
@@ -289,6 +305,45 @@ select {
   margin-right: 30px;
 }
 
+.stack__card {
+  position: relative;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.stack__card.goStack:nth-child(1) {
+  -webkit-transform: translate(50%, 50%);
+  -ms-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+  top: 15px;
+  left: 15px;
+}
+
+.stack__card.goStack:nth-child(2) {
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  top: 15px;
+  right: 15px;
+}
+
+.stack__card.goStack:nth-child(3) {
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  left: 15px;
+  top: -15px;
+}
+
+.stack__card.goStack:nth-child(4) {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  right: 15px;
+  top: -15px;
+}
+
 .stack__info {
   position: absolute;
   top: 37%;
@@ -350,6 +405,10 @@ select {
   animation-name: cloud;
 }
 
+.stack.e-mixing .stack__gif {
+  opacity: 1;
+}
+
 .stack.e-hide .eraser {
   opacity: 0;
 }
@@ -362,6 +421,11 @@ select {
   background-color: currentColor;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  -o-transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 }
 
 .card.disable {
@@ -1088,6 +1152,12 @@ select {
     top: 39%;
     min-width: 180px;
     padding: 10px 15px;
+  }
+  .stack__gif {
+    width: 150px;
+    height: 150px;
+    margin-top: -90px;
+    margin-left: -75px;
   }
   .timer {
     font-size: 50px;

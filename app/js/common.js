@@ -90,7 +90,7 @@ var swip = {
       ]
     ],
     winnerAttempt: 1,
-    prizesCount: Number($('.js-prizes').text()),
+    prizesCount: Number($(".js-prizes").text()),
     currentAttempt: 0,
     currentCardIndex: 0,
     timer: 8,
@@ -126,8 +126,8 @@ var swip = {
     _t.resultsLayout = $(".layout__results");
     _t.cardsLayout = $(".layout__swips");
 
-    _t.rightAnswersEl = $('.js-rightAnswers');
-    _t.totalAnswersEl = $('.js-totalAnswers');
+    _t.rightAnswersEl = $(".js-rightAnswers");
+    _t.totalAnswersEl = $(".js-totalAnswers");
 
     _t.coloringCards(configs.colorPalette[configs.currentAttempt]);
 
@@ -176,7 +176,7 @@ var swip = {
         // isRight = answer.attr("data-right"),
         isRight = true,
         answerEl = answer.find(".questions__btn");
-        
+
       answer.siblings().addClass("disabled");
 
       if (isRight) {
@@ -196,7 +196,7 @@ var swip = {
       .mousemove(function(e) {
         _t.cursor.show().css({
           left: e.clientX - 30,
-          top: e.clientY - 20
+          top: e.clientY - 20 + $(window).scrollTop()
         });
       })
       .mouseout(function() {
@@ -208,7 +208,8 @@ var swip = {
   start: function() {
     var _t = this;
 
-    _t.firstStep();
+    // _t.firstStep();
+    _t.secondStep();
   },
   nextQuestion: function(isRight) {
     var _t = this,
@@ -247,7 +248,7 @@ var swip = {
   },
   counting: function() {
     var _t = this,
-    configs = _t.config;
+      configs = _t.config;
 
     setTimeout(function() {
       _t.questionsLayout.hide(0, counting);
@@ -312,18 +313,38 @@ var swip = {
       .removeClass("active disable e-start e-hide e-cloud");
 
     _t.stack.addClass("e-start");
+
+    var rotateStep = 4;
+
     setTimeout(
       function() {
         _t.hideItems(function() {
+          $(".stack__card").each(function(i, el) {
+            $(el).addClass("goStack");
+          });
+          // мешаем карточки
           _t.colorTimer = setInterval(function() {
             var palette = Util.shuffleArray(
               configs.colorPalette[configs.currentAttempt]
             );
+
+            _t.stack.addClass("e-mixing");
+
+
+            _t.cards.each(function(i, el) {
+              $(el).css({
+                transform: "rotate(" + i * rotateStep + "deg)"
+              });
+            });
+
             _t.coloringCards(palette);
           }, 400);
+          //
+          // стоп перемешки
           setTimeout(function() {
             _t.stopShuffle();
           }, 3000);
+          //
         });
       },
       configs.currentAttempt >= configs.winnerAttempt ? 0 : 2000
@@ -332,7 +353,9 @@ var swip = {
   hideItems: function(cb) {
     var _t = this;
     _t.stack.addClass("e-hide");
-    cb();
+    setTimeout(function() {
+      cb();
+    }, 500);
   },
   coloringCards: function(palette) {
     var _t = this,
@@ -343,6 +366,10 @@ var swip = {
     _t.cards.each(function(index, el) {
       var color1 = palette[index][0],
         color2 = palette[index][1];
+
+      setTimeout(function() {
+        _t.cards.css("transform", "rotate(0)");
+      }, 200);
       $(el).css({
         color: color1,
         backgroundImage:
@@ -350,16 +377,15 @@ var swip = {
       });
       _t.erasers
         .eq(index)
-        .attr(
-          "data-config",
-          '["' + palette[index][0] + '", "' + palette[index][1] + '"]'
-        );
+        .attr("data-config", '["' + color1 + '", "' + color2 + '"]');
     });
   },
   stopShuffle: function() {
     var _t = this,
       configs = _t.config;
     clearInterval(_t.colorTimer);
+    _t.stack.removeClass("e-mixing");
+    $(".stack__card").removeClass("goStack");
     _t.makeErasers();
     _t.stack.addClass("e-cloud");
     _t.cursor.css("opacity", "1");
@@ -381,7 +407,8 @@ var swip = {
               .index();
             _t.disableErasers.call(_t);
           },
-          completeRatio: configs.currentAttempt >= configs.winnerAttempt ? .5 : .35,
+          completeRatio:
+            configs.currentAttempt >= configs.winnerAttempt ? 0.5 : 0.35,
           completeFunction: _t.results.bind(_t)
         });
     });
