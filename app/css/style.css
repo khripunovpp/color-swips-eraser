@@ -759,7 +759,6 @@ select {
   visibility: hidden;
   font-size: 0;
   margin-top: 40px;
-  margin-bottom: -26px;
 }
 
 .questions__answers-list.active {
@@ -810,7 +809,7 @@ select {
   line-height: 1;
   color: #fff;
   width: 100%;
-  margin-bottom: 26px;
+  margin-bottom: 10px;
   white-space: nowrap;
   padding: 15px;
   border-radius: 50px;
@@ -1109,5 +1108,11 @@ select {
   }
   .questions__answer:nth-child(even) {
     margin-left: 26px;
+  }
+  .questions__answers-list {
+    margin-bottom: -26px;
+  }
+  .questions__btn {
+    margin-bottom: 26px;
   }
 }

@@ -90,7 +90,7 @@ var swip = {
       ]
     ],
     winnerAttempt: 1,
-    prizesCount: 3,
+    prizesCount: Number($('.js-prizes').text()),
     currentAttempt: 0,
     currentCardIndex: 0,
     timer: 8,
@@ -147,6 +147,7 @@ var swip = {
       _t.closePopup("#popupStart", function() {
         _t.start();
         _t.timerInit();
+        _t.counter();
       });
     });
 
@@ -159,7 +160,6 @@ var swip = {
           .siblings()
           .removeClass("active");
         _t.secondStep();
-        _t.counter();
       });
     });
 
@@ -482,7 +482,7 @@ var swip = {
       count--;
       if (count === 1) clearInterval(timerId);
       el.text(count);
-    }, 6000);
+    }, 10000);
   },
   comments: function() {
     var _t = this;

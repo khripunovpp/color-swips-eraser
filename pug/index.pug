@@ -13,22 +13,27 @@ html
 
 	body
 		.w-page
+
 			<!-- КУРСОР -->
 			img(src="img/cursor.png", alt="")#cursor
 			<!-- // -->
+
 			section.layout
 				.layout__header
+
 					<!-- ШАПКА -->
 					header.header
 						.header__top
 							p.header__logo BRANDNAME
 							p.header__timer.timer.js-timer 08:00
 							p.header__attempts.attempts Prizes remaining:
-								span.js-prizes 3
+								span.js-prizes 5
 						h1.header__sign.active Ответь на несколько простых вопросов!
 						h1.header__sign Choose a box and win a phone!
 					<!-- // -->
+
 				.layout__questions
+
 					<!-- ВОПРОСЫ -->
 					section.questions
 						.questions__content
@@ -123,7 +128,9 @@ html
 										li.questions__answer
 											button.questions__btn 1994
 					<!-- // -->
+
 				.layout__counting
+
 					<!-- ПОДСЧЕТ СТАТЫ -->
 					section.counting
 						.counting__loader.loader
@@ -136,7 +143,9 @@ html
 							li.counting__item Lorem ipsum dolor sit amet, consectetur!
 							li.counting__item Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?
 					<!-- // -->
+
 				.layout__results
+
 					<!-- РУЗЛЬТАТЫ ОПРОСА -->
 					section.results
 						p.results__title Вы отлично ответили на все вопросы!
@@ -145,12 +154,15 @@ html
 							p.results__text Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
 							button.results__btn.btn.js-startSecondStep Начать играть!
 					<!-- // -->
+
 				.layout__swips
 					section.stack
+
 						<!-- ОБЛАКО -->
 						.stack__cloud 
 							span Scratch
 						<!-- // -->
+
 						<!-- КАРТОЧКИ -->
 						.stack__pics
 							.stack__pic.eraser.eraser--phone
@@ -175,7 +187,9 @@ html
 							.stack__card
 								.card
 						<!-- // -->
+
 				.layout__comments
+				
 					<!-- КОММЕНТЫ -->
 					section.comments
 						h2.comments__title Comments
@@ -241,9 +255,11 @@ html
 									p.review__name — Clarence
 									p.review__date a moment ago
 					<!-- // -->
+
 			<!-- ФУТЕР -->
 			footer.footer #[span.ryear], © Copyright
 			<!-- // -->
+
 			<!-- ПОПАП ВЫИГРЫША -->
 			aside.popup#popupWin
 				table.popup__overlay
@@ -257,6 +273,7 @@ html
 								a.popup__btn.btn(href="") Get a prize
 								p.popup__text Please provide your contacts to get a prize. #[br]Hurry up.
 			<!-- // -->
+
 			<!-- ПОПАП СТАРТА -->
 			aside.popup#popupStart
 				table.popup__overlay
@@ -270,6 +287,7 @@ html
 									li.rules__item.rules__item--3 #[p 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
 								button.popup__btn.btn.js-start Start!
 			<!-- // -->
+			
 			<!-- ПОПАП ПРОИГРЫША -->
 			aside.popup#popupLoose
 				table.popup__overlay
@@ -281,6 +299,7 @@ html
 								p.popup__text You have 2 more attempts
 								button.popup__btn.btn.js-restart Continue
 			<!-- // -->
+
 		<!-- НЕ ТРОГАТЬ, НЕ ЗАМЕНЯТЬ - ВСЕ ПОЛЕТИТ. ПЛАГИН ПЕРЕПИСАН -->
 		script(src="js/jquery.eraser.CUSTOMIZED.js")
 		script(src="js/common.js")
