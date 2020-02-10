@@ -761,7 +761,7 @@ select {
   visibility: hidden;
   font-size: 0;
   margin-top: 40px;
-  margin-bottom: -26px;
+  margin-bottom: -10px;
 }
 
 .questions__answers-list.active {
@@ -822,7 +822,7 @@ select {
   line-height: 1;
   color: #fff;
   width: 100%;
-  margin-bottom: 26px;
+  margin-bottom: 10px;
   white-space: nowrap;
   padding: 15px;
   border-radius: 50px;
