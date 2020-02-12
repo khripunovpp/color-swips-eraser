@@ -25,7 +25,7 @@ html
 							p.header__timer.timer.js-timer 08:00
 							p.header__attempts.attempts Prizes remaining:
 								span.js-prizes 5
-						h1.header__sign.active Ответь на несколько простых вопросов!
+						h1.header__sign.active Answer several simple questions!
 						h1.header__sign Choose a box and win a phone!
 					<!-- // -->
 				.layout__questions
@@ -34,10 +34,10 @@ html
 						.questions__content
 							.questions__top
 								ul.questions__questions
-									li.questions__questions-item.active Какой из приведенных логотипов принадлежит компании Samsung?
-									li.questions__questions-item На каком фото изображен iPhone 11 Pro?
-									li.questions__questions-item Выберите первый логотип компании Apple:
-									li.questions__questions-item Укажите отличительную особенность Samsung Galaxy S 10:
+									li.questions__questions-item.active Which of provided logos belongs to Samsung company? 
+									li.questions__questions-item In which picture you can see iPhone 11 Pro?
+									li.questions__questions-item Choose the first logo of Apple company:
+									li.questions__questions-item In which picture you can see Samsung Galaxy S 10?
 							.questions__bottom
 								ul.questions__propgress.propgress
 									li.progress__item.active
@@ -86,23 +86,30 @@ html
 					<!-- ПОДСЧЕТ СТАТЫ -->
 					section.counting
 						.counting__loader.loader
-							p.loader__status Проверяем ваши ответы...
-								span.loader__percentage 0%
+							p.loader__status 
+								span Checking your answers...
+								strong.loader__percentage 0%
 							.loader__progress
 								span.loader__completeProgress
 						ul.counting__list
-							li.counting__item Lorem ipsum dolor sit amet, consectetur (#[span.js-rightAnswers 0]/#[span.js-totalAnswers 0])!
-							li.counting__item Lorem ipsum dolor sit amet, consectetur!
-							li.counting__item Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam?
+							li.counting__item 
+								p Checking your answers
+								strong (#[span.js-rightAnswers 0]/#[span.js-totalAnswers 0])
+							li.counting__item 
+								p Checking your IP for duplicate addresses
+								strong Not detected
+							li.counting__item 
+								p Checking prize availability
+								strong Available
 					<!-- // -->
 				.layout__results
 					<!-- РУЗЛЬТАТЫ ОПРОСА -->
 					section.results
-						p.results__title Вы отлично ответили на все вопросы!
+						p.results__title You answered all the questions perfectly!
 						.results__box
 							img.results__pic(src="img/scratch-pic.png", alt="")
-							p.results__text Остался всего один шаг до вашего новенького телефона! Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
-							button.results__btn.btn.js-startSecondStep Начать играть!
+							p.results__text You’re just a step away from the prize! Scratch off the coating and win it! You have just 3 attempts!
+							button.results__btn.btn.js-startSecondStep Start a game!
 					<!-- // -->
 				.layout__swips
 					section.stack
@@ -222,11 +229,11 @@ html
 					tr
 						td.popup__wrapper
 							.popup__panel
-								h2.popup__title Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.
+								h2.popup__title Congratulations! You were chosen to win (5) prize! Follow the guide below:
 								ul.popup__rules.rules
-									li.rules__item.rules__item--1 #[p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
-									li.rules__item.rules__item--2 #[p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
-									li.rules__item.rules__item--3 #[p 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, ac viverra eget auctor.]
+									li.rules__item.rules__item--1 #[p 1. Answer the quiz questions.]
+									li.rules__item.rules__item--2 #[p 2. Try Your luck and scratch 1 of 4 coloured squares.]
+									li.rules__item.rules__item--3 #[p 3. Не забудь оставить свои контакты для получения приза!]
 								button.popup__btn.btn.js-start Start!
 			<!-- // -->
 			<!-- ПОПАП ПРОИГРЫША -->

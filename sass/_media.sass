@@ -38,6 +38,8 @@
 			padding: 90px 15px
 		&__pic
 			max-width: none
+		&__panel
+			padding: 40px
 
 	.stack
 		cursor: default
@@ -45,6 +47,11 @@
 			top: 39%
 			min-width: 180px
 			padding: 10px 15px
+		&__gif
+			width: 150px
+			height: 150px
+			margin-top: -90px
+			margin-left: -75px
 
 	.timer
 		font-size: 50px
@@ -53,6 +60,45 @@
 		strong
 			font-size: 24px
 
+	.loader
+		&__status
+			font-size: 24px
+
 	.questions
 		&__bottom
 			padding: 20px
+		&__answer
+			width: calc(50% - 13px)
+			display: inline-block
+			&:nth-child(even)
+				margin-left: 26px
+		&__answers
+			&-list
+				margin-bottom: -26px
+		&__btn
+			margin-bottom: 26px
+
+	.rules
+		&__item
+			min-height: 80px
+			&::before
+				display: inline-block
+				vertical-align: middle
+				margin-right: 25px
+				margin-bottom: 0
+			p
+				display: inline-block
+				vertical-align: middle
+				width: calc(100% - 105px)
+
+	.counting
+		&__list
+			padding: 40px
+		&__item
+			padding-right: 150px
+			strong
+				position: absolute
+				top: 0
+				right: 0
+				width: 150px
+				padding-top: 0
