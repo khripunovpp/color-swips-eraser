@@ -327,22 +327,22 @@ var swip = {
     setTimeout(
       function() {
         _t.hideItems(function() {
-          // $(".stack__card").each(function(i, el) {
-          //   $(el).addClass("goStack");
-          // });
+          $(".stack__card").each(function(i, el) {
+            $(el).addClass("goStack");
+          });
           // мешаем карточки
           _t.colorTimer = setInterval(function() {
             var palette = Util.shuffleArray(
               configs.colorPalette[configs.currentAttempt]
             );
 
-            // _t.stack.addClass("e-mixing");
+            _t.stack.addClass("e-mixing");
 
-            // _t.cards.each(function(i, el) {
-            //   $(el).css({
-            //     transform: "rotate(" + i * rotateStep + "deg)"
-            //   });
-            // });
+            _t.cards.each(function(i, el) {
+              $(el).css({
+                transform: "rotate(" + i * rotateStep + "deg)"
+              });
+            });
 
             _t.coloringCards(palette);
           }, 400);
@@ -360,10 +360,9 @@ var swip = {
   hideItems: function(cb) {
     var _t = this;
     _t.stack.addClass("e-hide");
-    cb();
-    // setTimeout(function() {
-    //   cb();
-    // }, 500);
+    setTimeout(function() {
+      cb();
+    }, 500);
   },
   coloringCards: function(palette) {
     var _t = this,
